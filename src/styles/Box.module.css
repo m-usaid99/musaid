@@ -1,0 +1,31 @@
+.box {
+  border: 5px solid var(--color-white);
+  padding: 20px;
+  margin: auto;
+  max-width: 100%;
+  /* You can adjust this based on how wide you want the box to be */
+  max-height: 90vh;
+  /* Make it take up most of the vertical space */
+  background-color: var(--background-color-primary);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  /* Center the box */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 95%;
+  /* Adjust width to take up most of the screen */
+  height: 95%;
+  /* Adjust height to take up most of the screen */
+}
+
+.content {
+  position: relative;
+  /* Ensure content is positioned correctly */
+  z-index: 2;
+  /* Ensure content is above the sketch */
+}

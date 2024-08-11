@@ -1,0 +1,42 @@
+:root {
+  font-size: 16px;
+  /* Monochrome Dark Theme Palette */
+  --color-black: #000000;
+  --color-dark-grey: #1c1c1c;
+  --color-grey: #3d3d3d;
+  --color-light-grey: #b0b0b0;
+  --color-white: #ffffff;
+
+  /* Text Colors */
+  --text-color-primary: var(--color-white);
+  --text-color-secondary: var(--color-light-grey);
+
+  /* Background Colors */
+  --background-color-primary: var(--color-black);
+  --background-color-secondary: var(--color-dark-grey);
+
+  /* Border Colors */
+  --border-color: var(--color-grey);
+
+  /* Font Variables */
+  --font-primary: 'Inconsolata', sans-serif;
+  --font-secondary: 'League Spartan', monospace;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-primary);
+  background-color: var(--background-color-primary);
+  color: var(--text-color-primary);
+  line-height: 1.25;
+}
+
+a {
+  color: var(--text-color-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--text-color-secondary);
+}
