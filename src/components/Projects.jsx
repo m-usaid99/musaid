@@ -2,6 +2,8 @@ import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import Box from './Box';
 import styles from '../styles/Projects.module.css';
+import Sketch from './Sketch';
+import { hilbertDraw, hilbertSetup } from './sketches/HilbertCurve';
 
 function Projects() {
   const rightColumnRef = useRef(null);
@@ -31,7 +33,7 @@ function Projects() {
   }, []);
 
   return (
-    <Box>
+    <Box sketch={<Sketch setup={hilbertSetup} draw={hilbertDraw} />}>
       <Link to="/" className={styles.homeLink}>HOME</Link>
       <div className={styles.content}>
         <div className={styles.leftColumn}>
