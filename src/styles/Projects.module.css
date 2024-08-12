@@ -1,0 +1,35 @@
+.content {
+  display: flex;
+  height: 100%;
+}
+
+.leftColumn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  /* Aligns content to the bottom */
+  padding: 20px;
+}
+
+.title {
+  font-family: var(--font-secondary);
+  font-size: 2vw;
+  font-weight: 300;
+  color: var(--text-color-primary);
+  margin-bottom: 0;
+}
+
+.description {
+  font-size: 0.9vw;
+  color: var(--text-color-secondary);
+  margin-top: 0;
+  width: 40%;
+}
+
+.rightColumn {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  /* Ensures the project list will be scrollable */
+}
