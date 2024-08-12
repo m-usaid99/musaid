@@ -9,32 +9,33 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* This keeps the name/description at the top and lorem at the bottom */
-  padding: 20px;
+  padding: 2vw;
 }
 
 .name {
   font-family: var(--font-secondary);
-  font-size: 3rem;
+  font-size: 2vw;
+  /* Adjusted for better scaling */
   font-weight: 300;
   color: var(--text-color-primary);
   margin-bottom: 0;
 }
 
 .description {
-  font-size: 1rem;
+  font-size: 1vw;
+  /* Adjusted for better consistency */
   color: var(--text-color-secondary);
   margin-bottom: auto;
-  /* Pushes the loremText to the bottom */
   margin-top: 0;
 }
 
 .loremText {
-  font-size: 1rem;
+  font-size: 0.9vw;
+  /* Consistent with the description */
   color: var(--text-color-secondary);
   margin-top: auto;
   width: 20%;
-  /* Ensures it stays at the bottom */
+  font-weight: 700;
 }
 
 .rightColumn {
@@ -43,23 +44,102 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
-  padding-right: 40px;
+  padding-right: 3vw;
+  /* Adjusted for more balance */
 }
 
 .menu {
   list-style: none;
-  padding: 50px;
-  margin-top: 125px;
+  padding: 4vw;
+  /* Balanced padding for responsiveness */
+  margin-top: 10vh;
+  /* Use vh for vertical spacing */
 }
 
 .menu li {
-  font-size: 5rem;
-  margin-bottom: 40px;
+  font-size: 4.5vw;
+  /* Adjusted for better scaling */
+  margin-bottom: 3.5vh;
+  /* Use vh for vertical spacing */
   cursor: pointer;
   color: var(--text-color-primary);
-  padding-left: 75px;
+  padding-left: 5vw;
+  font-weight: 600;
+  transition: color 0.3s ease, transform 0.3s ease;
+  /* Smooth transition for color and other effects */
+  /* Adjusted for more balance */
 }
 
 .menu li:hover {
   color: var(--text-color-secondary);
+  /* Slight movement to the right on hover */
+  text-decoration: none;
+  /* Ensures no underline appears */
+}
+
+/* Media Queries for Home Component */
+@media (max-width: 1200px) {
+  .name {
+    font-size: 3vw;
+    /* Smaller text on medium screens */
+  }
+
+  .menu li {
+    font-size: 3vw;
+    /* Adjusted for medium screens */
+    padding-left: 4vw;
+    /* Adjusted padding for medium screens */
+  }
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 5vw;
+  }
+
+  .leftColumn {
+    text-align: left;
+    width: 100%;
+    /* Ensure full width for left column */
+  }
+
+  .rightColumn {
+    align-items: flex-end;
+    /* Align the menu items to the right */
+    width: 100%;
+    /* Ensure full width for the menu */
+    margin-top: 20px;
+    /* Add some space between text and menu */
+  }
+
+  .menu {
+    text-align: right;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    /* Ensure full width for the menu */
+  }
+
+  .name {
+    font-size: 6vw;
+  }
+
+  .description {
+    font-size: 3vw;
+  }
+
+  .loremText {
+    font-size: 3vw;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 80%;
+  }
+
+  .menu li {
+    font-size: 10vw;
+    margin-bottom: 15vw;
+  }
 }

@@ -29,7 +29,7 @@ class Particle {
       let distance = p5.Vector.dist(this.pos, wave.center);
       let smoothFactor = wave.radius < 50 ? wave.radius / 50 : 1; // Gradually increase brightness at the start
       let waveEffect = smoothFactor * this.p.exp(-this.p.abs(distance - wave.radius) / 100);
-      this.brightness += waveEffect * 140; // Accumulate brightness from all waves
+      this.brightness += waveEffect * 120; // Accumulate brightness from all waves
     }
 
     // Boundary check to keep particles within the canvas
@@ -66,7 +66,7 @@ export const homeSetup = (p) => {
   p.waves = [];
 
   // Create a number of particles
-  for (let i = 0; i < 10000; i++) {  // Adjust this number based on desired density
+  for (let i = 0; i < 7500; i++) {  // Adjust this number based on desired density
     p.particles.push(new Particle(p));
   }
 };

@@ -27,5 +27,29 @@
   position: relative;
   /* Ensure content is positioned correctly */
   z-index: 2;
+  overflow-y: scroll;
+  scrollbar-width: none;
   /* Ensure content is above the sketch */
+}
+
+.content::-webkit-scrollbar {
+  display: none;
+  /* For Chrome, Safari, and Opera: hide scrollbar */
+}
+
+@media (max-width: 1200px) {
+  .box {
+    width: 90vw;
+    /* More space on medium screens */
+    height: 90vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .box {
+    width: 99vw;
+    /* Almost full width on small screens */
+    height: 99vh;
+    border: 2px solid var(--color-white);
+  }
 }
