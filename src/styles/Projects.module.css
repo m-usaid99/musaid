@@ -8,28 +8,114 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  /* Aligns content to the bottom */
-  padding: 20px;
+  /* Aligns everything to the bottom */
+  padding: 2vw;
 }
 
 .title {
   font-family: var(--font-secondary);
-  font-size: 2vw;
-  font-weight: 300;
+  font-size: 2.5vw;
+  font-weight: 400;
   color: var(--text-color-primary);
   margin-bottom: 0;
+  margin-left: 2vw;
+  /* Adjust bottom margin to position the text above the description */
 }
 
 .description {
-  font-size: 0.9vw;
+  font-size: 1rem;
   color: var(--text-color-secondary);
-  margin-top: 0;
+  /* Ensure there's no extra margin at the bottom */
+  padding-bottom: 2vw;
+  margin-left: 2vw;
   width: 40%;
+
+  /* Add some spacing between the text and the bottom of the box */
 }
 
 .rightColumn {
   flex: 1;
-  padding: 20px;
+  margin-top: 4vw;
+  margin-bottom: 3vw;
+  overflow-y: scroll;
+  /* Enables scrolling for the project list */
+  scrollbar-width: none;
+  /* For Firefox */
+}
+
+.rightColumn::-webkit-scrollbar {
+  display: none;
+  /* For Chrome, Safari, and Opera */
+}
+
+.projectList {
+  list-style: none;
   overflow-y: auto;
-  /* Ensures the project list will be scrollable */
+}
+
+.projectItem {
+  margin-bottom: 3vw;
+  /* Adjust spacing between project items */
+}
+
+.projectItem h2 {
+  font-size: 3vw;
+  font-weight: 600;
+  margin: 0;
+  color: var(--text-color-primary);
+  transition: color 0.3s ease;
+  letter-spacing: 3px;
+}
+
+.projectItem p {
+  font-size: 1rem;
+  color: var(--text-color-secondary);
+  margin: 5px 0 0 0;
+}
+
+.projectItem .descriptionTechStack {
+  max-height: 0;
+  /* Start with no height */
+  overflow: hidden;
+  /* Hide overflowing content */
+  transition: max-height 0.6s ease;
+  /* Smooth transition for height */
+}
+
+.projectItem:hover .descriptionTechStack {
+  max-height: 100px;
+  /* Adjust this value based on content height */
+}
+
+.projectItem:hover h2 {
+  color: var(--text-color-secondary);
+}
+
+.overview1 {
+  font-weight: 300;
+}
+
+.projDescription {
+  font-style: italic;
+  font-weight: 600;
+}
+
+.homeLink {
+  position: absolute;
+  top: 1vw;
+  left: 1vw;
+  padding: 1vw;
+  color: var(--text-color-primary);
+  /* Adjust based on your color scheme */
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  z-index: 1000;
+  /* Ensure it stays above other elements */
+  transform: rotate(-90deg);
+}
+
+.homeLink:hover {
+  color: var(--text-color-secondary);
+  /* Optional hover effect */
 }

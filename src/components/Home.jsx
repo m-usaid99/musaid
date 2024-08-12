@@ -22,7 +22,7 @@ function Home() {
           <p className={styles.loremText}>
             In an era of frameworks & repetitive UI libraries, I strive to bring creativity and individuality to what I create.
 
-            <p>I view coding as a creative process, much like painting or composing music — each line of code is a personal expression of creativity.</p>
+            I view coding as a creative process, much like painting or composing music — each line of code is a personal expression of creativity.
           </p>
         </div>
         <div className={styles.rightColumn}>
