@@ -21,6 +21,7 @@ function Sketch({ setup, draw }) {
       p.windowResized = () => {
         p.resizeCanvas(sketchRef.current.clientWidth, sketchRef.current.clientHeight);
         if (setup) setup(p);  // Re-run setup or specific recalculation logic
+        p.redraw();
       };
     });
 

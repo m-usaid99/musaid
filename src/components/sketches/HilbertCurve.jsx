@@ -1,8 +1,9 @@
 export const hilbertSetup = (p) => {
   p.size = Math.max(p.width, p.height);
-  p.order = 8; // Adjust this for different levels of the Hilbert curve
+  p.order = 7; // Adjust this for different levels of the Hilbert curve
   p.angleMode(p.DEGREES);
-  p.noLoop(); // Stops draw() from looping infinitely
+  p.noLoop();
+  p.pixelDensity(1);
 };
 
 export const hilbertDraw = (p) => {
@@ -21,8 +22,7 @@ const hilbertCurve = (p, cx, cy, size, order, angle) => {
     hilbertCurve(p, size / 4, size / 4, size / 2, order - 1, -90);
   }
 
-  p.strokeWeight(0.4);
-  p.stroke(150);
+  p.stroke(40);
 
   let n = p.pow(2, order + 1);
   p.line(-size / n, -size / n, size / n, -size / n);

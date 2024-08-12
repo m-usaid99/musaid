@@ -19,11 +19,11 @@ function Home() {
         <div className={styles.leftColumn}>
           <h1 className={styles.name}>Muhammad Usaid</h1>
           <p className={styles.description}>web design, development & programming</p>
-          <p className={styles.loremText}>
-            In an era of frameworks & repetitive UI libraries, I strive to bring creativity and individuality to what I create.
+          <div className={styles.loremText}>
+            <p>In an era of frameworks & repetitive UI libraries, I strive to bring creativity and individuality to what I create. </p>
 
-            I view coding as a creative process, much like painting or composing music — each line of code is a personal expression of creativity.
-          </p>
+            <p>I view coding as a creative process, much like painting or composing music — each line of code is a personal expression of creativity. </p>
+          </div>
         </div>
         <div className={styles.rightColumn}>
           <ul className={styles.menu}>
@@ -34,7 +34,7 @@ function Home() {
           </ul>
         </div>
       </div>
-    </Box>
+    </Box >
   );
 }
 

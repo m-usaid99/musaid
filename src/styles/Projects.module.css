@@ -18,16 +18,23 @@
   font-weight: 400;
   color: var(--text-color-primary);
   margin-bottom: 0;
+  margin-right: auto;
   margin-left: 2vw;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  margin-bottom: 30px;
+  border-radius: 15px;
   /* Adjust bottom margin to position the text above the description */
 }
 
 .description {
   font-size: 1rem;
+  border-radius: 15px;
   color: var(--text-color-secondary);
   /* Ensure there's no extra margin at the bottom */
-  padding-bottom: 2vw;
+  padding: 10px;
   margin-left: 2vw;
+  background: rgba(0, 0, 0, 0.5);
   width: 40%;
 
   /* Add some spacing between the text and the bottom of the box */
@@ -55,7 +62,9 @@
 
 .projectItem {
   margin-bottom: 3vw;
-  /* Adjust spacing between project items */
+  margin-right: auto;
+  width: fit-content;
+  padding: 15px;
 }
 
 .projectItem h2 {
