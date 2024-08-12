@@ -4,10 +4,11 @@ class Particle {
   constructor(p) {
     this.p = p;
     this.pos = this.p.createVector(this.p.random(this.p.width), this.p.random(this.p.height));
-    this.vel = this.p.createVector(this.p.random(-0.2, 0.2), this.p.random(-0.2, 0.2));
-    this.size = this.p.random(1.5, 2); // Adjust size based on shape
+    this.depth = this.p.random(0.5, 1.25); // Depth factor (0.5 for far, 1.5 for near)
+    this.vel = this.p.createVector(this.p.random(-0.1, 0.1) * this.depth, this.p.random(-0.1, 0.1) * this.depth);
+    this.size = this.p.random(1, 1.5) * this.depth * 1.2; // Increase size multiplier based on depth
+    this.baseBrightness = 50 * this.depth * 1.5; // Increase brightness multiplier based on depth
     this.shapeType = this.p.random(['circle', 'triangle', 'square']); // Random shape
-    this.baseBrightness = 50; // Base brightness level
   }
 
   update(waves) {
