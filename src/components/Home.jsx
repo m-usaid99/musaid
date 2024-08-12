@@ -1,8 +1,9 @@
 import React from 'react';
 import { useMediaQuery } from 'react-responsive';
-import Box from './Box';
 import { homeSetup, homeDraw } from './sketches/HomeSketch';
 import { mobileSetup, mobileDraw } from './sketches/HomeSketchMobile';
+import { Link } from 'react-router-dom';
+import Box from './Box';
 import Sketch from './Sketch';
 import styles from '../styles/Home.module.css';
 
@@ -26,10 +27,10 @@ function Home() {
         </div>
         <div className={styles.rightColumn}>
           <ul className={styles.menu}>
-            <li>PROJECTS</li>
-            <li>ABOUT</li>
-            <li>AUDIO JOURNAL</li>
-            <li>CONTACT</li>
+            <li><Link to='/projects'>PROJECTS</Link></li>
+            <li><Link to='/about'>ABOUT</Link></li>
+            <li><Link to='/audio-journal'>AUDIO JOURNAL</Link></li>
+            <li><Link to='/contact'>CONTACT</Link></li>
           </ul>
         </div>
       </div>
