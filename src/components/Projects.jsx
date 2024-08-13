@@ -44,7 +44,7 @@ function Projects() {
         setActiveProject(project); // Open the details for the clicked project
       }
     } else {
-      navigate(`/${project}`);
+      navigate(`/projects/${project}`);
     }
   };
 
@@ -78,7 +78,7 @@ function Projects() {
                   {isMobile && (
                     <button
                       className={styles.viewProjectButton}
-                      onClick={() => navigate('/expense-mate')}
+                      onClick={() => navigate('/projects/expense-mate')}
                     >
                       View Project
                     </button>

@@ -1,26 +1,23 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-function PageTransition({ children, direction = 'right' }) {
+function PageTransition({ children, direction = 'up' }) {
   const variants = {
-    initial: {
-      x: direction === 'left' ? '-100%' : direction === 'right' ? '100%' : 0,
-      y: direction === 'up' ? '-100%' : direction === 'down' ? '100%' : 0,
-    },
-    animate: {
-      x: 0,
-      y: 0,
-      transition: { duration: 0.6, ease: 'easeIn' },
-    },
+    up: { initial: { y: '100%' }, animate: { y: 0 } },
+    down: { initial: { y: '-100%' }, animate: { y: 0 } },
+    left: { initial: { x: '100%' }, animate: { x: 0 } },
+    right: { initial: { x: '-100%' }, animate: { x: 0 } },
   };
 
   return (
     <motion.div
-      initial="initial"
-      animate="animate"
-      variants={variants}
+      initial={variants[direction].initial}
+      animate={variants[direction].animate}
+      transition={{ duration: 0.6, ease: 'easeIn' }}
       style={{
         position: 'absolute',
+        top: 0, // Ensure it's positioned at the top
+        left: 0, // Ensure it's positioned on the left
         width: '100%',
         height: '100%',
       }}
