@@ -7,6 +7,7 @@ import About from './components/About';
 import Contact from './components/Contact';
 import { AnimatePresence } from 'framer-motion';
 import PageTransition from './components/PageTransition';
+import HomeWrapper from './components/HomeWrapper';
 
 function AnimateApp() {
   const location = useLocation();
@@ -34,7 +35,7 @@ function AnimateApp() {
   return (
     <AnimatePresence mode='wait'>
       <Routes location={location} key={location.pathname}>
-        <Route path="/" element={hasNavigated ? <PageTransition direction={direction}><Home /></PageTransition> : <Home />} />
+        <Route path="/" element={hasNavigated ? <PageTransition direction={direction}><Home /></PageTransition> : <HomeWrapper />} />
         <Route path="/projects" element={<PageTransition direction={direction}><Projects /></PageTransition>} />
         <Route path="/about" element={<PageTransition direction={direction}><About /></PageTransition>} />
         <Route path="/audio-journal" element={<PageTransition direction={direction}><AudioJournal /></PageTransition>} />
