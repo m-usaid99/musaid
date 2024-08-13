@@ -135,7 +135,7 @@
   width: fit-content;
   margin-top: 10px;
   background: none;
-  color: var(--text-color-primary);
+  color: var(--text-color-secondary);
   border: 2px solid white;
   font-size: 1rem;
   text-align: left;
@@ -223,6 +223,27 @@
 
   .descriptionTechStack {
     margin-top: 10px;
+  }
+
+  .projectItem {
+    user-select: none;
+    -webkit-user-select: none;
+    /* Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+  }
+
+  .projectItem h2,
+  .projectItem p {
+    user-select: none;
+    -webkit-user-select: none;
+    /* Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
   }
 
 }
