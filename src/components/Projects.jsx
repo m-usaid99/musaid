@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Box from './Box';
 import styles from '../styles/Projects.module.css';
 import Sketch from './Sketch';
@@ -7,6 +7,7 @@ import { hilbertDraw, hilbertSetup } from './sketches/HilbertCurve';
 
 function Projects() {
   const rightColumnRef = useRef(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -50,9 +51,15 @@ function Projects() {
             <li className={styles.projectItem} >
               <h2>EXPENSE MATE</h2>
               <p className={styles.overview1}>design • development • july '24</p>
-              <div className={styles.descriptionTechStack}>
+              <div className={styles.descriptionTechStack} >
                 <p className={styles.projDescription}>a streamlined management tool to track personal finances</p>
                 <p>React, Redux, Material-UI, Express, MongoDB, Jest, Swagger</p>
+                <button
+                  className={styles.viewProjectButton}
+                  onClick={() => navigate('/')}
+                >
+                  View Project
+                </button>
               </div>
             </li>
             <li className={styles.projectItem}>

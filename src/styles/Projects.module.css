@@ -92,7 +92,7 @@
 }
 
 .projectItem:hover .descriptionTechStack {
-  max-height: 100px;
+  max-height: 120px;
   /* Adjust this value based on content height */
 }
 
@@ -127,4 +127,102 @@
 .homeLink:hover {
   color: var(--text-color-secondary);
   /* Optional hover effect */
+}
+
+.viewProjectButton {
+  display: none;
+  /* Hide the button by default */
+  width: fit-content;
+  margin-top: 10px;
+  background: none;
+  color: var(--text-color-primary);
+  border: 2px solid white;
+  font-size: 1rem;
+  text-align: left;
+  cursor: pointer;
+  font: var(--font-primary);
+}
+
+.viewProjectButton:hover {
+  background-color: var(--background-color-hover);
+}
+
+@media (max-width: 768px) {
+
+  .content {
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0;
+    padding: 0;
+  }
+
+  .leftColumn {
+    width: 90%;
+
+  }
+
+  .title {
+    font-size: 6vw;
+    background: none;
+    text-align: left;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
+  .description {
+    width: 80%;
+    font-size: 3.5vw;
+    /* Adjust font size */
+    text-align: left;
+    background: none;
+  }
+
+  .rightColumn {
+    overflow-y: scroll;
+    margin: 0;
+    padding: 0;
+    margin-top: 20px;
+  }
+
+  .projectItem {
+    width: 90%;
+    text-align: left;
+    border-radius: 10px;
+    padding: 2vw;
+    margin-bottom: 6vw;
+  }
+
+  .projectItem h2 {
+    font-size: 6vw;
+    padding: 0;
+    margin: 0;
+  }
+
+  .projectItem p {
+    font-size: 3.75vw;
+    padding: 0;
+    margin: 0;
+  }
+
+  .projectItem .overview1 {
+    font-size: 3vw;
+  }
+
+  .homeLink {
+    padding: 2vw;
+    margin: 3vw;
+    transform: rotate(0deg);
+    font-weight: 300;
+    font-size: 4vw;
+  }
+
+  .viewProjectButton {
+    display: block;
+    /* Show the button only on mobile screens */
+  }
+
+  .descriptionTechStack {
+    margin-top: 10px;
+  }
+
 }
