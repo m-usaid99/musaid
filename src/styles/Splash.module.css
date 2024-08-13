@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 100%;
   width: 100%;
   background-color: var(--background-color-primary);
 }
@@ -31,4 +31,14 @@
 .divider {
   margin: 0 15px;
   font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .name {
+    font-size: 6vw;
+  }
+
+  .port {
+    font-size: 4vw;
+  }
 }
