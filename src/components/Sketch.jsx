@@ -23,6 +23,20 @@ function Sketch({ setup, draw }) {
         if (setup) setup(p);  // Re-run setup or specific recalculation logic
         p.redraw();
       };
+
+      // Redraw the canvas on transition end
+      const handleTransitionEnd = () => {
+        p.resizeCanvas(sketchRef.current.clientWidth, sketchRef.current.clientHeight);
+        p.redraw();  // Force a redraw
+      };
+
+      // Add event listener for transition end
+      sketchRef.current.addEventListener('transitionend', handleTransitionEnd);
+
+      return () => {
+        sketchRef.current.removeEventListener('transitionend', handleTransitionEnd);
+        sketch.remove();
+      };
     });
 
     return () => {
