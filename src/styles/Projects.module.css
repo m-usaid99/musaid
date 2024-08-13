@@ -122,10 +122,12 @@
   z-index: 1000;
   /* Ensure it stays above other elements */
   transform: rotate(-90deg);
+  letter-spacing: 5px;
 }
 
 .homeLink:hover {
   color: var(--text-color-secondary);
+  text-decoration: line-through;
   /* Optional hover effect */
 }
 
@@ -136,8 +138,8 @@
   margin-top: 10px;
   background: none;
   color: var(--text-color-secondary);
-  border: 2px solid white;
-  font-size: 1rem;
+  border: 1px solid white;
+  font-size: 12px !important;
   text-align: left;
   cursor: pointer;
   font: var(--font-primary);
@@ -214,6 +216,7 @@
     transform: rotate(0deg);
     font-weight: 300;
     font-size: 4vw;
+    text-decoration: none;
   }
 
   .viewProjectButton {
@@ -245,5 +248,4 @@
     -ms-user-select: none;
     /* Internet Explorer/Edge */
   }
-
 }
