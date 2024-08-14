@@ -8,7 +8,6 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  /* Aligns everything to the bottom */
   padding: 2vw;
 }
 
@@ -24,20 +23,16 @@
   background: rgba(0, 0, 0, 0.5);
   margin-bottom: 30px;
   border-radius: 15px;
-  /* Adjust bottom margin to position the text above the description */
 }
 
 .description {
   font-size: 1rem;
   border-radius: 15px;
   color: var(--text-color-secondary);
-  /* Ensure there's no extra margin at the bottom */
   padding: 10px;
   margin-left: 2vw;
   background: rgba(0, 0, 0, 0.5);
   width: 40%;
-
-  /* Add some spacing between the text and the bottom of the box */
 }
 
 .rightColumn {
@@ -45,14 +40,11 @@
   margin-top: 4vw;
   margin-bottom: 3vw;
   overflow-y: scroll;
-  /* Enables scrolling for the project list */
   scrollbar-width: none;
-  /* For Firefox */
 }
 
 .rightColumn::-webkit-scrollbar {
   display: none;
-  /* For Chrome, Safari, and Opera */
 }
 
 .projectList {
@@ -84,16 +76,12 @@
 
 .projectItem .descriptionTechStack {
   max-height: 0;
-  /* Start with no height */
   overflow: hidden;
-  /* Hide overflowing content */
   transition: max-height 0.6s ease;
-  /* Smooth transition for height */
 }
 
 .projectItem:hover .descriptionTechStack {
-  max-height: 120px;
-  /* Adjust this value based on content height */
+  max-height: 150px;
 }
 
 .projectItem:hover h2 {
@@ -115,12 +103,10 @@
   left: 1vw;
   padding: 1vw;
   color: var(--text-color-primary);
-  /* Adjust based on your color scheme */
   text-decoration: none;
   font-size: 1.2rem;
   font-weight: 600;
   z-index: 1000;
-  /* Ensure it stays above other elements */
   transform: rotate(-90deg);
   letter-spacing: 5px;
 }
@@ -128,12 +114,10 @@
 .homeLink:hover {
   color: var(--text-color-secondary);
   text-decoration: line-through;
-  /* Optional hover effect */
 }
 
 .viewProjectButton {
   display: none;
-  /* Hide the button by default */
   width: fit-content;
   margin-top: 10px;
   background: none;
@@ -156,11 +140,14 @@
     align-items: flex-start;
     margin: 0;
     padding: 0;
+    justify-content: flex-start;
+    position: relative;
   }
 
   .leftColumn {
     width: 90%;
-
+    flex-grow: 0;
+    flex-shrink: 0;
   }
 
   .title {
@@ -168,22 +155,21 @@
     background: none;
     text-align: left;
     margin-bottom: 0;
-    margin-top: 0;
+    margin-top: 30px;
   }
 
   .description {
     width: 80%;
     font-size: 3.5vw;
-    /* Adjust font size */
     text-align: left;
     background: none;
   }
 
   .rightColumn {
     overflow-y: scroll;
-    margin: 0;
     padding: 0;
-    margin-top: 20px;
+    margin-top: 0;
+    justify-content: flex-start;
   }
 
   .projectItem {
@@ -211,17 +197,22 @@
   }
 
   .homeLink {
+    position: absolute;
+    top: 2vw;
+    right: 2vw;
     padding: 2vw;
-    margin: 3vw;
-    transform: rotate(0deg);
-    font-weight: 300;
-    font-size: 4vw;
+    color: var(--text-color-primary);
     text-decoration: none;
+    font-size: 4vw;
+    font-weight: 600;
+    z-index: 1000;
+    letter-spacing: 5px;
+    transform: rotate(0deg);
+    text-align: right;
   }
 
   .viewProjectButton {
     display: block;
-    /* Show the button only on mobile screens */
   }
 
   .descriptionTechStack {
@@ -230,22 +221,10 @@
 
   .projectItem {
     user-select: none;
-    -webkit-user-select: none;
-    /* Safari */
-    -moz-user-select: none;
-    /* Firefox */
-    -ms-user-select: none;
-    /* Internet Explorer/Edge */
   }
 
   .projectItem h2,
   .projectItem p {
     user-select: none;
-    -webkit-user-select: none;
-    /* Safari */
-    -moz-user-select: none;
-    /* Firefox */
-    -ms-user-select: none;
-    /* Internet Explorer/Edge */
   }
 }

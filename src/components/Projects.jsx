@@ -15,25 +15,36 @@ function Projects() {
   useEffect(() => {
     const handleScroll = () => {
       const projectItems = rightColumnRef.current.querySelectorAll(`.${styles.projectItem}`);
+      const windowHeight = window.innerHeight;
+      const isMobile = window.innerWidth <= 768; // Check if the screen width is mobile
 
       projectItems.forEach((item) => {
         const rect = item.getBoundingClientRect();
-        const windowHeight = window.innerHeight;
         const distanceFromBottom = windowHeight - rect.bottom;
 
-        // Determine opacity based on distance from the bottom
-        const opacity = Math.min(1, Math.max(0.2, distanceFromBottom / 200));
+        // Adjust threshold based on whether it's mobile or desktop
+        const threshold = isMobile ? windowHeight * 0.15 : windowHeight * 0.3; // 20% for mobile, 30% for desktop
+        const opacity = Math.min(1, Math.max(0.2, distanceFromBottom / threshold));
         item.style.opacity = opacity;
       });
     };
 
     const rightColumn = rightColumnRef.current;
-    rightColumn.addEventListener('scroll', handleScroll);
 
-    // Call handleScroll initially to set opacity based on initial positions
-    handleScroll();
+    // Add event listeners for both scroll and touchmove
+    const timeoutId = setTimeout(() => {
+      rightColumn.addEventListener('scroll', handleScroll);
+      if (isMobile) {
+        rightColumn.addEventListener('touchmove', handleScroll, { passive: true });
+      }
+      handleScroll(); // Call handleScroll initially to set opacity based on initial positions
+    }, 600); // Adjust this duration based on your transition time
 
-    return () => rightColumn.removeEventListener('scroll', handleScroll);
+    return () => {
+      clearTimeout(timeoutId);
+      rightColumn.removeEventListener('scroll', handleScroll);
+      rightColumn.removeEventListener('touchmove', handleScroll);
+    };
   }, []);
 
   const handleProjectClick = (project) => {
