@@ -59,6 +59,10 @@ function Projects() {
     }
   };
 
+  const mobileText = "Tap on a project to view a brief description and the corresponding tech stack of the project. Feel free to press the View Project button to view more details."
+  const desktopText =
+    "Hover over a project to view a brief description and the corresponding tech stack of the project. Feel free to click on a project to view more detail."
+
   return (
     <Box sketch={<Sketch setup={hilbertSetup} draw={hilbertDraw} />}>
       <Link to="/" className={styles.homeLink}>HOME</Link>
@@ -67,9 +71,10 @@ function Projects() {
           <h1 className={styles.title}>PROJECTS</h1>
           <div className={styles.description}>
             <p>
-              This is a showcase of my best work in the areas of ui/ux design, web design & development, and general programming.
+              This is a showcase of my best work in the areas of ui/ux design, web design & development, and general programming. I beleive these works exhibit my skill in programming, and
+              my sensitivity for design & aesthetics in more creative areas.
             </p>
-            <p>Hover over a project to view a brief description and the tech stack of the project. Feel free to click on a project to view more detail.</p>
+            <p>{isMobile ? mobileText : desktopText}</p>
           </div>
         </div>
         <div className={styles.rightColumn} ref={rightColumnRef}>

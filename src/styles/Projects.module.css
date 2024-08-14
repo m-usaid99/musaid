@@ -26,13 +26,14 @@
 }
 
 .description {
-  font-size: 1rem;
+  font-size: 1vw;
   border-radius: 15px;
   color: var(--text-color-secondary);
   padding: 10px;
   margin-left: 2vw;
   background: rgba(0, 0, 0, 0.5);
   width: 40%;
+  font-family: var(--font-secondary);
 }
 
 .rightColumn {
