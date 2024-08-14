@@ -22,7 +22,7 @@
 }
 
 .description {
-  font-size: 1vw;
+  font-size: 1.5vw;
   /* Adjusted for better consistency */
   color: var(--text-color-secondary);
   margin-bottom: auto;
@@ -128,14 +128,15 @@
   }
 
   .description {
-    font-size: 3vw;
+    font-size: 3.5vw;
   }
 
   .loremText {
-    font-size: 3vw;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    width: 80%;
+    font-size: 3.75vw;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 90%;
+    font-weight: 500;
   }
 
   .menu li {

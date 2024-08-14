@@ -188,9 +188,10 @@
   }
 
   .projectItem p {
-    font-size: 3.75vw;
+    font-size: 3vw;
     padding: 0;
     margin: 0;
+    margin-bottom: 1vw;
   }
 
   .projectItem .overview1 {
@@ -227,5 +228,10 @@
   .projectItem h2,
   .projectItem p {
     user-select: none;
+  }
+
+
+  .overview1 {
+    margin-bottom: 1vw;
   }
 }
