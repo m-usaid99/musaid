@@ -22,11 +22,12 @@
 }
 
 .description {
-  font-size: 1.5vw;
+  font-size: 1vw;
   /* Adjusted for better consistency */
   color: var(--text-color-secondary);
   margin-bottom: auto;
   margin-top: 0;
+  font-weight: 600;
 }
 
 .loremText {
@@ -44,16 +45,17 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
-  padding-right: 3vw;
+  padding-right: 10vw;
   /* Adjusted for more balance */
 }
 
 .menu {
   list-style: none;
-  padding: 4vw;
+  padding: 0;
   /* Balanced padding for responsiveness */
-  margin-top: 10vh;
-  /* Use vh for vertical spacing */
+  margin-top: 1vh;
+  margin-bottom: 2vh
+    /* Use vh for vertical spacing */
 }
 
 .menu li {
@@ -63,7 +65,7 @@
   /* Use vh for vertical spacing */
   cursor: pointer;
   color: var(--text-color-primary);
-  padding-left: 5vw;
+  padding-left: 1vw;
   font-weight: 600;
   transition: color 0.3s ease, transform 0.3s ease;
   /* Smooth transition for color and other effects */
@@ -75,6 +77,11 @@
   /* Slight movement to the right on hover */
   text-decoration: none;
   /* Ensures no underline appears */
+}
+
+.nowPlaying {
+  padding: 1vw;
+  margin: 1vw;
 }
 
 /* Media Queries for Home Component */

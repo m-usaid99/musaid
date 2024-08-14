@@ -1,5 +1,5 @@
-const API_KEY = process.env.REACT_APP_LASTFM_API_KEY;
-const USERNAME = process.env.REACT_APP_LASTFM_USERNAME;
+const API_KEY = import.meta.env.VITE_LASTFM_API_KEY;
+const USERNAME = import.meta.env.VITE_LASTFM_USERNAME;
 
 export const getRecentTrack = async () => {
   const url = `http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${USERNAME}&api_key=${API_KEY}&format=json&limit=1`;
