@@ -24,8 +24,8 @@ class Particle {
   constructor(p) {
     this.p = p;
     this.pos = this.p.createVector(this.p.random(this.p.width), this.p.random(this.p.height));
-    this.vel = this.p.createVector(this.p.random(-0.1, 0.1), this.p.random(-0.1, 0.1));
-    this.size = this.p.random(1.5, 2);
+    this.vel = this.p.createVector(this.p.random(-0.125, 0.125), this.p.random(-0.125, 0.125));
+    this.size = this.p.random(2, 2.5);
   }
 
   update() {
@@ -38,7 +38,7 @@ class Particle {
 
   display() {
     this.p.noStroke();
-    this.p.fill(255, 50);
+    this.p.fill(255, 70);
     this.p.ellipse(this.pos.x, this.pos.y, this.size, this.size);
   }
 }
