@@ -22,7 +22,7 @@ const HomeWrapper = () => {
           initial={{ opacity: 1 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 0.9 }}
           style={{ position: 'absolute', width: '100%', height: '100%' }}
         >
           <Splash />
@@ -32,7 +32,7 @@ const HomeWrapper = () => {
           key="home"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 0.9 }}
           style={{ position: 'absolute', width: '100%', height: '100%' }}
         >
           <Home />
