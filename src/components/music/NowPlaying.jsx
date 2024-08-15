@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styles from '../../styles/NowPlaying.module.css';
 
-const NowPlaying = ({ albumArtUrl, trackName, artistName }) => {
+const NowPlaying = ({ albumArtUrl, trackName, artistName, trackUrl }) => {
   const [initialAnimationDone, setInitialAnimationDone] = useState(false);
 
   useEffect(() => {
@@ -23,7 +23,7 @@ const NowPlaying = ({ albumArtUrl, trackName, artistName }) => {
   }, []);
 
   return (
-    <div className={`${styles.nowPlayingWrapper} ${!initialAnimationDone ? styles.initialAnimation : ''}`}>
+    <a href={trackUrl} target="_blank" rel="noopener noreferrer" className={`${styles.nowPlayingWrapper} ${!initialAnimationDone ? styles.initialAnimation : ''}`}>
       <div className={styles.trackInfo}>
         <span className={styles.trackName}>{trackName}</span>
         <span className={styles.artistName}>{artistName}</span>
@@ -32,7 +32,7 @@ const NowPlaying = ({ albumArtUrl, trackName, artistName }) => {
         <p id="text"></p>
         <img src={albumArtUrl} alt="Album Art" />
       </div>
-    </div>
+    </a>
   );
 };
 

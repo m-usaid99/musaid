@@ -15,6 +15,7 @@ function Home() {
   const [trackName, setTrackName] = useState('');
   const [artistName, setArtistName] = useState('');
   const [albumArtUrl, setAlbumArtUrl] = useState('');
+  const [trackUrl, setTrackUrl] = useState('');
 
   useEffect(() => {
     // Example: Fetch the most recent track from your utility file or API
@@ -24,6 +25,7 @@ function Home() {
         setTrackName(trackData.name);
         setArtistName(trackData.artist['#text']);
         setAlbumArtUrl(trackData.image[2]['#text']); // Example: Medium-sized album art
+        setTrackUrl(trackData.url);
       }
     };
 
@@ -44,7 +46,7 @@ function Home() {
         </div>
         <div className={styles.rightColumn}>
           <div className={styles.nowPlaying}>
-            {!isMobile && <NowPlaying albumArtUrl={albumArtUrl} trackName={trackName} artistName={artistName} />}
+            {!isMobile && <NowPlaying albumArtUrl={albumArtUrl} trackName={trackName} artistName={artistName} trackUrl={trackUrl} />}
           </div>
           <ul className={styles.menu}>
             <li><Link to='/projects'>PROJECTS</Link></li>
