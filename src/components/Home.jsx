@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useMediaQuery } from 'react-responsive';
 import { homeSetup, homeDraw } from './sketches/HomeSketch';
 import { mobileSetup, mobileDraw } from './sketches/HomeSketchMobile';
@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 import Box from './Box';
 import Sketch from './Sketch';
 import styles from '../styles/Home.module.css';
-import { getRecentTrack } from '../utils/lastfmApi';
 import NowPlaying from './music/NowPlaying';
 
 // - begin integration of last.fm api for a now playing widget;

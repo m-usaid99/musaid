@@ -8,6 +8,7 @@ const NowPlaying = () => {
   const [artistName, setArtistName] = useState('');
   const [albumArtUrl, setAlbumArtUrl] = useState('');
   const [trackUrl, setTrackUrl] = useState('');
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
   useEffect(() => {
@@ -31,15 +32,21 @@ const NowPlaying = () => {
   useEffect(() => {
     // Example: Fetch the most recent track from your utility file or API
     const fetchRecentTrack = async () => {
-      const trackData = await getRecentTrack(); // Assuming getRecentTrack is a utility function
-      if (trackData) {
-        setTrackName(trackData.name);
-        setArtistName(trackData.artist['#text']);
-        setAlbumArtUrl(trackData.image[2]['#text']); // Example: Medium-sized album art
-        setTrackUrl(trackData.url);
-        setError(false);
-      } else {
+      try {
+        const trackData = await getRecentTrack(); // Assuming getRecentTrack is a utility function
+        if (trackData) {
+          setTrackName(trackData.name);
+          setArtistName(trackData.artist['#text']);
+          setAlbumArtUrl(trackData.image[2]['#text']); // Example: Medium-sized album art
+          setTrackUrl(trackData.url);
+          setError(false);
+        } else {
+          setError(true);
+        }
+      } catch (error) {
         setError(true);
+      } finally {
+        setLoading(false);
       }
     };
 
@@ -65,7 +72,13 @@ const NowPlaying = () => {
       </div>
       <div className={styles.nowPlayingContainer}>
         <p id="text"></p>
-        <img src={albumArtUrl} alt="Album Art" />
+        {loading ? (
+          <div className={styles.loadingSpinner}>
+            {/* Your loading animation here */}
+          </div>
+        ) : (
+          <img src={albumArtUrl} alt="Album Art" />
+        )}
       </div>
     </a>
   );
