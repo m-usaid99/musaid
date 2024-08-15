@@ -8,6 +8,7 @@ const NowPlaying = () => {
   const [artistName, setArtistName] = useState('');
   const [albumArtUrl, setAlbumArtUrl] = useState('');
   const [trackUrl, setTrackUrl] = useState('');
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     const str = "now playing  .  now playing  .  ";
@@ -36,6 +37,9 @@ const NowPlaying = () => {
         setArtistName(trackData.artist['#text']);
         setAlbumArtUrl(trackData.image[2]['#text']); // Example: Medium-sized album art
         setTrackUrl(trackData.url);
+        setError(false);
+      } else {
+        setError(true);
       }
     };
 
@@ -49,6 +53,9 @@ const NowPlaying = () => {
   }, []);
 
 
+  if (error) {
+    return null;
+  }
 
   return (
     <a href={trackUrl} target="_blank" rel="noopener noreferrer" className={`${styles.nowPlayingWrapper} ${!initialAnimationDone ? styles.initialAnimation : ''}`}>
