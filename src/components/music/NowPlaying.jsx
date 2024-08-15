@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styles from '../../styles/NowPlaying.module.css';
 
 const NowPlaying = ({ albumArtUrl, trackName, artistName }) => {
-  const [initialAnimation, setInitialAnimation] = useState(true);
+  const [initialAnimationDone, setInitialAnimationDone] = useState(false);
 
   useEffect(() => {
     const str = "now playing  .  now playing  .  ";
@@ -14,25 +14,23 @@ const NowPlaying = ({ albumArtUrl, trackName, artistName }) => {
       span.style.transform = `rotate(${11 * i}deg)`;
     }
 
-    // Trigger the initial animation
+    // Set a timeout to remove the initial animation class
     const timeout = setTimeout(() => {
-      setInitialAnimation(false);
-    }, 3000); // Adjust this duration based on your preference
+      setInitialAnimationDone(true);
+    }, 3000); // Duration matches the initial animation duration
 
     return () => clearTimeout(timeout);
   }, []);
 
   return (
-    <div className={styles.nowPlayingWrapper}>
-      <div className={`${styles.nowPlayingContainer} ${initialAnimation ? styles.initial : ''}`}>
-        <p id="text"></p>
-        <img src={albumArtUrl} alt="Album Art" />
-      </div>
-      <div
-        className={`${styles.trackInfo} ${initialAnimation ? styles.initialAnimation : styles.normalState}`}
-      >
+    <div className={`${styles.nowPlayingWrapper} ${!initialAnimationDone ? styles.initialAnimation : ''}`}>
+      <div className={styles.trackInfo}>
         <span className={styles.trackName}>{trackName}</span>
         <span className={styles.artistName}>{artistName}</span>
+      </div>
+      <div className={styles.nowPlayingContainer}>
+        <p id="text"></p>
+        <img src={albumArtUrl} alt="Album Art" />
       </div>
     </div>
   );

@@ -1,6 +1,8 @@
 .nowPlayingWrapper {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
+  /* Keeps items aligned to the left */
 }
 
 .nowPlayingContainer {
@@ -51,27 +53,24 @@
 .trackInfo {
   display: flex;
   flex-direction: column;
-  margin-left: 20px;
+  margin-right: 20px;
+  /* Ensures it’s on the left */
   margin-top: 20px;
   opacity: 0;
-  transform: translateX(-20px);
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform: translateX(-100%);
+  /* Start completely off the left */
+  transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
 .nowPlayingWrapper:hover .trackInfo {
   transform: translateX(0);
+  /* Bring it into view on hover */
   opacity: 1;
 }
 
 .nowPlayingWrapper:hover span {
   color: var(--text-color-primary);
 }
-
-.normalState:hover {
-  transform: translateX(0);
-  opacity: 1;
-}
-
 
 .trackName,
 .artistName {
@@ -90,19 +89,19 @@
 }
 
 /* Initial Animation */
-.initialAnimation {
+.initialAnimation .trackInfo {
   animation: slideOutIn 3s ease forwards;
 }
 
 @keyframes slideOutIn {
   0% {
-    transform: translateX(-20px);
+    transform: translateX(-100%);
     opacity: 0;
   }
 
   30% {
     transform: translateX(0);
-    opacity: 0.5;
+    opacity: 1;
   }
 
   70% {
@@ -111,7 +110,7 @@
   }
 
   100% {
-    transform: translateX(-20px);
+    transform: translateX(-100%);
     opacity: 0;
   }
 }
