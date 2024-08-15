@@ -38,7 +38,7 @@ class Particle {
 
   display() {
     this.p.noStroke();
-    this.p.fill(255, 70);
+    this.p.fill(255, 50);
     this.p.ellipse(this.pos.x, this.pos.y, this.size, this.size);
   }
 }

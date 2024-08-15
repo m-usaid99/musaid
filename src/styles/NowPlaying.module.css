@@ -1,0 +1,116 @@
+.nowPlayingWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  /* Keeps items aligned to the left */
+}
+
+.nowPlayingContainer {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 0;
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nowPlayingContainer p {
+  height: 100px;
+  font-size: 11px;
+  width: 100px;
+  position: relative;
+  animation: effect 13s linear infinite;
+  letter-spacing: 2.5px;
+}
+
+@keyframes effect {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.nowPlayingContainer span {
+  position: absolute;
+  left: 50%;
+  transform-origin: 0px 50px;
+  transform-style: flat;
+  color: var(--text-color-secondary);
+}
+
+.nowPlayingContainer img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.trackInfo {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+  /* Ensures it’s on the left */
+  margin-top: 20px;
+  opacity: 0;
+  transform: translateX(-100%);
+  /* Start completely off the left */
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.nowPlayingWrapper:hover .trackInfo {
+  transform: translateX(0);
+  /* Bring it into view on hover */
+  opacity: 1;
+}
+
+.nowPlayingWrapper:hover span {
+  color: var(--text-color-primary);
+}
+
+.trackName,
+.artistName {
+  color: var(--text-color-primary);
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.artistName {
+  font-style: italic;
+}
+
+.trackName {
+  margin-top: 10px;
+}
+
+/* Initial Animation */
+.initialAnimation .trackInfo {
+  animation: slideOutIn 3s ease forwards;
+}
+
+@keyframes slideOutIn {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  30% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  70% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
