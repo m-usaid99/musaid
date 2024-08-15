@@ -10,6 +10,7 @@ const NowPlaying = () => {
   const [trackUrl, setTrackUrl] = useState('');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
+  const [trackUpdated, setTrackUpdated] = useState(false);
 
   useEffect(() => {
     const str = "now playing  .  now playing  .  ";
@@ -30,16 +31,40 @@ const NowPlaying = () => {
   }, []);
 
   useEffect(() => {
-    // Example: Fetch the most recent track from your utility file or API
+    const str = "now playing  .  now playing  .  ";
+    const text = document.getElementById("text");
+    for (let i = 0; i < str.length; i++) {
+      let span = document.createElement('span');
+      span.innerHTML = str[i];
+      text.appendChild(span);
+      span.style.transform = `rotate(${11 * i}deg)`;
+    }
+
+    // Set a timeout to remove the initial animation class
+    const timeout = setTimeout(() => {
+      setInitialAnimationDone(true);
+    }, 3000); // Duration matches the initial animation duration
+
+    return () => clearTimeout(timeout);
+  }, []);
+
+  useEffect(() => {
     const fetchRecentTrack = async () => {
       try {
         const trackData = await getRecentTrack(); // Assuming getRecentTrack is a utility function
         if (trackData) {
-          setTrackName(trackData.name);
-          setArtistName(trackData.artist['#text']);
-          setAlbumArtUrl(trackData.image[2]['#text']); // Example: Medium-sized album art
-          setTrackUrl(trackData.url);
-          setError(false);
+          const newTrackName = trackData.name;
+          if (newTrackName !== trackName) {
+            setTrackName(newTrackName);
+            setArtistName(trackData.artist['#text']);
+            setAlbumArtUrl(trackData.image[2]['#text']); // Example: Medium-sized album art
+            setTrackUrl(trackData.url);
+            setError(false);
+
+            // Trigger the track update animation
+            setTrackUpdated(true);
+            setTimeout(() => setTrackUpdated(false), 3000); // Adjust duration as needed
+          }
         } else {
           setError(true);
         }
@@ -56,16 +81,15 @@ const NowPlaying = () => {
     const interval = setInterval(fetchRecentTrack, 10000); // 60000 ms = 1 minute
 
     // Cleanup interval on component unmount
-    return () => clearInterval(interval)
-  }, []);
-
-
+    return () => clearInterval(interval);
+  }, [trackName]);
   if (error) {
     return null;
   }
 
   return (
-    <a href={trackUrl} target="_blank" rel="noopener noreferrer" className={`${styles.nowPlayingWrapper} ${!initialAnimationDone ? styles.initialAnimation : ''}`}>
+    <a href={trackUrl} target="_blank" rel="noopener noreferrer"
+      className={`${styles.nowPlayingWrapper} ${trackUpdated ? styles.initialAnimation : ''} ${!initialAnimationDone ? styles.initialAnimation : ''}`} >
       <div className={styles.trackInfo}>
         <span className={styles.trackName}>{trackName}</span>
         <span className={styles.artistName}>{artistName}</span>
