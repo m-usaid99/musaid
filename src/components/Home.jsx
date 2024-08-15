@@ -44,7 +44,7 @@ function Home() {
         </div>
         <div className={styles.rightColumn}>
           <div className={styles.nowPlaying}>
-            {!isMobile && <NowPlaying albumArtUrl={albumArtUrl} />}
+            {!isMobile && <NowPlaying albumArtUrl={albumArtUrl} trackName={trackName} artistName={artistName} />}
           </div>
           <ul className={styles.menu}>
             <li><Link to='/projects'>PROJECTS</Link></li>
