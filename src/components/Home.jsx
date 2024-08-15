@@ -12,23 +12,6 @@ import NowPlaying from './music/NowPlaying';
 // - begin integration of last.fm api for a now playing widget;
 function Home() {
   const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
-  const [trackName, setTrackName] = useState('');
-  const [artistName, setArtistName] = useState('');
-  const [albumArtUrl, setAlbumArtUrl] = useState('');
-
-  useEffect(() => {
-    // Example: Fetch the most recent track from your utility file or API
-    const fetchRecentTrack = async () => {
-      const trackData = await getRecentTrack(); // Assuming getRecentTrack is a utility function
-      if (trackData) {
-        setTrackName(trackData.name);
-        setArtistName(trackData.artist['#text']);
-        setAlbumArtUrl(trackData.image[2]['#text']); // Example: Medium-sized album art
-      }
-    };
-
-    fetchRecentTrack();
-  }, []);
 
   return (
     <Box sketch={<Sketch setup={isMobile ? mobileSetup : homeSetup} draw={isMobile ? mobileDraw : homeDraw} />}>
@@ -44,7 +27,7 @@ function Home() {
         </div>
         <div className={styles.rightColumn}>
           <div className={styles.nowPlaying}>
-            {!isMobile && <NowPlaying albumArtUrl={albumArtUrl} trackName={trackName} artistName={artistName} />}
+            {!isMobile && <NowPlaying />}
           </div>
           <ul className={styles.menu}>
             <li><Link to='/projects'>PROJECTS</Link></li>
