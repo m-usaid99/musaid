@@ -1,8 +1,13 @@
 import React, { useEffect, useState } from 'react';
+import { getRecentTrack } from '../../utils/lastfmApi';
 import styles from '../../styles/NowPlaying.module.css';
 
-const NowPlaying = ({ albumArtUrl, trackName, artistName, trackUrl }) => {
+const NowPlaying = () => {
   const [initialAnimationDone, setInitialAnimationDone] = useState(false);
+  const [trackName, setTrackName] = useState('');
+  const [artistName, setArtistName] = useState('');
+  const [albumArtUrl, setAlbumArtUrl] = useState('');
+  const [trackUrl, setTrackUrl] = useState('');
 
   useEffect(() => {
     const str = "now playing  .  now playing  .  ";
@@ -21,6 +26,29 @@ const NowPlaying = ({ albumArtUrl, trackName, artistName, trackUrl }) => {
 
     return () => clearTimeout(timeout);
   }, []);
+
+  useEffect(() => {
+    // Example: Fetch the most recent track from your utility file or API
+    const fetchRecentTrack = async () => {
+      const trackData = await getRecentTrack(); // Assuming getRecentTrack is a utility function
+      if (trackData) {
+        setTrackName(trackData.name);
+        setArtistName(trackData.artist['#text']);
+        setAlbumArtUrl(trackData.image[2]['#text']); // Example: Medium-sized album art
+        setTrackUrl(trackData.url);
+      }
+    };
+
+    fetchRecentTrack();
+
+    // Set up the interval to refresh the track info every 60 seconds (adjust as needed)
+    const interval = setInterval(fetchRecentTrack, 10000); // 60000 ms = 1 minute
+
+    // Cleanup interval on component unmount
+    return () => clearInterval(interval)
+  }, []);
+
+
 
   return (
     <a href={trackUrl} target="_blank" rel="noopener noreferrer" className={`${styles.nowPlayingWrapper} ${!initialAnimationDone ? styles.initialAnimation : ''}`}>
