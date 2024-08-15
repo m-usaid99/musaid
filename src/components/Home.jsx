@@ -8,7 +8,6 @@ import Sketch from './Sketch';
 import styles from '../styles/Home.module.css';
 import NowPlaying from './music/NowPlaying';
 
-// - begin integration of last.fm api for a now playing widget;
 function Home() {
   const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
 
@@ -36,6 +35,7 @@ function Home() {
           </ul>
         </div>
       </div>
+      {isMobile && <div className={styles.gradientOverlay}></div>}
     </Box >
   );
 }
