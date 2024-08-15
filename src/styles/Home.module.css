@@ -117,7 +117,8 @@
   }
 }
 
-/* Mobile-specific adjustments */
+/* Existing styles remain unchanged */
+
 @media (max-width: 768px) {
   .content {
     flex-direction: column;
@@ -126,19 +127,23 @@
     height: 100%;
   }
 
-  .leftColumn {
-    text-align: left;
-    width: 90%;
-    /* Ensure full width for left column */
+  .nowPlaying {
+    position: absolute;
+    top: calc(100vh - 58vh);
+    /* Adjust this value to place it just above "PROJECTS" */
+    width: 250vw;
+    height: 80px;
+    left: 1%;
+    z-index: 11;
+    padding: 0;
+    margin: 0;
   }
 
+  /* Ensure other elements don't overlap */
   .rightColumn {
     align-items: flex-end;
-    /* Align the menu items to the right */
-    width: 90%;
-    /* Ensure full width for the menu */
     margin-top: 20px;
-    /* Add some space between text and menu */
+    width: 90%;
   }
 
   .menu {
@@ -146,7 +151,6 @@
     padding: 0;
     margin: 0;
     width: 100%;
-    /* Ensure full width for the menu */
     margin-bottom: 40px;
     margin-top: 30px;
   }
