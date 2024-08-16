@@ -135,36 +135,3 @@
     transform: rotate(360deg);
   }
 }
-
-.nowPlayingMobile {
-  display: flex;
-}
-
-.trackInfoMobile {
-  display: flex;
-  flex-direction: column;
-  transition: opacity 0.5s ease;
-  opacity: 0;
-  margin-left: 20px;
-  margin-top: 15px;
-}
-
-.artistNameMobile {
-  font-style: italic;
-}
-
-.expanded .trackInfoMobile {
-  opacity: 1;
-}
-
-.halfCircle {
-  width: 70px;
-  height: 70px;
-  clip-path: circle(50% at 0% 50%);
-  transition: clip-path 0.3s ease, transform 0.3s ease, left 0.3s ease;
-}
-
-.expanded .halfCircle {
-  clip-path: circle(50%);
-  transform: translateX(0);
-}

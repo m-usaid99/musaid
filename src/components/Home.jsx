@@ -7,6 +7,7 @@ import Box from './Box';
 import Sketch from './Sketch';
 import styles from '../styles/Home.module.css';
 import NowPlaying from './music/NowPlaying';
+import NowPlayingMobile from './music/NowPlayingMobile';
 
 function Home() {
   const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
@@ -15,7 +16,7 @@ function Home() {
     <div>
       {isMobile &&
         <div className={styles.nowPlaying}>
-          <NowPlaying />
+          <NowPlayingMobile />
         </div>}
 
       <Box sketch={<Sketch setup={isMobile ? mobileSetup : homeSetup} draw={isMobile ? mobileDraw : homeDraw} />}>
