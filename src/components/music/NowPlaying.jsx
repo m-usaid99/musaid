@@ -84,14 +84,18 @@ const NowPlaying = () => {
         className={`${styles.nowPlayingMobile} ${expanded ? styles.expanded : styles.collapsed}`}
         onClick={() => setExpanded(!expanded)} // Toggle expansion on click
       >
-        <div className={styles.albumArtMobile}>
-          <img src={albumArtUrl} alt="Album Art" className={styles.halfCircle} />
-        </div>
-        <div className={`${styles.trackInfoMobile} ${expanded ? styles.show : styles.hide}`}>
+        {loading ? (<div className={styles.loadingSpinner}></div>) : (
+          <div className={styles.albumArtMobile}>
+            <img src={albumArtUrl} alt="Album Art" className={styles.halfCircle} />
+          </div>)
+        }
+        <a
+          href={trackUrl} target='_blank' rel='noopener noreferrer'
+          className={`${styles.trackInfoMobile} ${expanded ? styles.show : styles.hide}`}>
           <span className={styles.trackNameMobile}>{trackName}</span>
           <span className={styles.artistNameMobile}>{artistName}</span>
-        </div>
-      </div>
+        </a>
+      </div >
     );
   }
 
