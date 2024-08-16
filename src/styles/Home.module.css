@@ -129,9 +129,7 @@
 
   .nowPlaying {
     position: absolute;
-    top: calc(100vh - 58vh);
-    /* Adjust this value to place it just above "PROJECTS" */
-    width: 250vw;
+    top: calc(100vh - 60vh);
     height: 80px;
     left: 1%;
     z-index: 11;
@@ -149,10 +147,9 @@
   .menu {
     text-align: right;
     padding: 0;
-    margin: 0;
     width: 100%;
     margin-bottom: 40px;
-    margin-top: 30px;
+    margin-top: 60px;
   }
 
   .name {
