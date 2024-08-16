@@ -17,13 +17,20 @@ const NowPlayingMobile = () => {
       try {
         const trackData = await getRecentTrack();
         if (trackData) {
-          setTrackName(trackData.name);
-          setArtistName(trackData.artist['#text']);
-          setAlbumArtUrl(trackData.image[2]['#text']);
-          setTrackUrl(trackData.url);
+          const newTrackName = trackData.name;
+          if (newTrackName !== trackName) {
+            setTrackName(trackData.name);
+            setArtistName(trackData.artist['#text']);
+            setAlbumArtUrl(trackData.image[2]['#text']);
+            setTrackUrl(trackData.url);
+            setExpanded(true);
+            setTimeout(() => setExpanded(false), 3000);
+          }
+        } else {
+          setError(true);
         }
       } catch (error) {
-        // handle error
+        setError(error);
       } finally {
         setLoading(false);
       }
@@ -34,6 +41,7 @@ const NowPlayingMobile = () => {
 
     return () => clearInterval(interval);
   }, [trackName]);
+
 
   useEffect(() => {
     const str = " . listening now . ";
@@ -52,6 +60,8 @@ const NowPlayingMobile = () => {
   const handleToggleExpand = () => {
     setExpanded(!expanded);
   };
+
+  if (error) return null;
 
   return (
     <div
