@@ -1,0 +1,136 @@
+.content {
+  padding: 20vh 10vw 0;
+  /* Add padding at the top, and adjust left/right padding as needed */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  text-align: left;
+  width: 100%;
+  margin-bottom: 20px;
+  /* Add space between the header and the rest of the content */
+}
+
+.title {
+  font-size: 2.5vw;
+  font-weight: 600;
+  letter-spacing: 4px;
+  margin-bottom: 10px;
+}
+
+.divider {
+  width: 100%;
+  border: 1px solid var(--color-white);
+  margin-bottom: 0;
+}
+
+.columns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.leftColumn,
+.rightColumn {
+  flex: 1;
+  padding: 0 10px;
+}
+
+.rightColumn ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.rightColumn li {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.rightColumn li::before {
+  content: "↗";
+  margin-right: 8px;
+  color: var(--text-color-secondary);
+  font-size: 1.2vw;
+}
+
+.rightColumn a {
+  color: var(--color-white);
+  text-decoration: none;
+  font-size: 1.25rem;
+}
+
+.rightColumn a:hover {
+  text-decoration: line-through;
+  color: var(--text-color-secondary);
+
+}
+
+.leftColumn {
+  text-align: left;
+  display: flex;
+  align-items: center;
+  /* Vertically align the label and the email address */
+}
+
+.leftColumn a {
+  color: var(--text-color-primary);
+  text-decoration: none;
+  font-size: 1.2rem;
+  display: flex;
+}
+
+.leftColumn a::before {
+  content: "↗";
+  margin-right: 8px;
+  color: var(--text-color-secondary);
+  font-size: 1.2vw;
+}
+
+.leftColumn a:hover {
+  text-decoration: line-through;
+  color: var(--text-color-secondary)
+}
+
+.label {
+  font-size: 1.4vw;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-right: 7.5vw;
+  /* Ensure the label is close to the links */
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.homeLink {
+  position: absolute;
+  top: 2vw;
+  left: 2vw;
+  padding: 1vw;
+  color: var(--text-color-primary);
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  z-index: 1000;
+  transform: rotate(-90deg);
+  letter-spacing: 5px;
+}
+
+.homeLink:hover {
+  color: var(--text-color-secondary);
+  text-decoration: line-through;
+}
+
+.links .label {
+  margin-top: 10;
+}
