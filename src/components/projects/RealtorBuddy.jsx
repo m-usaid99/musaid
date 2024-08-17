@@ -2,12 +2,12 @@ import React from "react";
 import Box from "../Box";
 
 
-function ExpenseMate() {
+function RealtorBuddy() {
   return (
     <Box>
-      <h1>Expense Mate</h1>
+      <h1>Realtor Buddy</h1>
     </Box>
   );
 };
 
-export default ExpenseMate;
+export default RealtorBuddy;

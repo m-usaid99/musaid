@@ -117,7 +117,7 @@ function Projects() {
                   {isMobile && (
                     <button
                       className={styles.viewProjectButton}
-                      onClick={() => navigate('/realtor-buddy')}
+                      onClick={() => navigate('/projects/realtor-buddy')}
                     >
                       View Project
                     </button>
@@ -140,7 +140,7 @@ function Projects() {
                   {isMobile && (
                     <button
                       className={styles.viewProjectButton}
-                      onClick={() => navigate('/ping-plotter')}
+                      onClick={() => navigate('/projects/ping-plotter')}
                     >
                       View Project
                     </button>
@@ -163,7 +163,7 @@ function Projects() {
                   {isMobile && (
                     <button
                       className={styles.viewProjectButton}
-                      onClick={() => navigate('/jammming')}
+                      onClick={() => navigate('/projects/jammming')}
                     >
                       View Project
                     </button>

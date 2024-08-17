@@ -2,12 +2,13 @@ import React from "react";
 import Box from "../Box";
 
 
-function ExpenseMate() {
+function PingPlotter() {
   return (
     <Box>
-      <h1>Expense Mate</h1>
+      <h1>Ping Plotter</h1>
     </Box>
   );
 };
 
-export default ExpenseMate;
+export default PingPlotter;
+
