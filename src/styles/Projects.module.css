@@ -100,8 +100,8 @@
 
 .homeLink {
   position: absolute;
-  top: 1vw;
-  left: 1vw;
+  top: 2vw;
+  left: 2vw;
   padding: 1vw;
   color: var(--text-color-primary);
   text-decoration: none;
@@ -200,8 +200,8 @@
 
   .homeLink {
     position: absolute;
-    top: 2vw;
-    right: 2vw;
+    top: 4vw;
+    right: 4vw;
     padding: 2vw;
     color: var(--text-color-primary);
     text-decoration: none;
