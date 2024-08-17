@@ -30,7 +30,7 @@
 }
 
 .expanded p {
-  left: 16%;
+  left: 15%;
 }
 
 .listeningNowWrapper span {
@@ -78,7 +78,7 @@
 .expanded .trackInfo {
   opacity: 1;
   pointer-events: auto;
-  transform: translateX(0);
+  transform: translateX(15%);
 }
 
 .trackName {
