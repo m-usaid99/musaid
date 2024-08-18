@@ -1,11 +1,11 @@
 import p5 from "p5";
 
 class Polygon {
-  constructor(p,) {
+  constructor(p, sizeRange) {
     this.p = p;
     this.pos = p.createVector(p.random(p.width), p.random(p.height));
     this.vel = p.createVector(p.random(-0.2, 0.2), p.random(-0.2, 0.2)); // Slower movement
-    this.size = p.random(3, 5);
+    this.size = p.random(sizeRange.min, sizeRange.max);
     this.angle = p.random(p.TWO_PI); // Initial random angle for rotation
     this.rotationSpeed = p.random(-0.01, 0.01); // Slower rotation speed
   }
@@ -50,14 +50,14 @@ class Polygon {
 }
 
 
-export const polygonSetup = (p) => {
+export const polygonSetup = (p, { sizeRange, numPolygons }) => {
   p.polygons = [];
   p.radius = 50; // Radius within which polygons will connect
-  p.numPolygons = 600;
+  p.numPolygons = numPolygons;
 
   // Create polygons
   for (let i = 0; i < p.numPolygons; i++) {
-    p.polygons.push(new Polygon(p));
+    p.polygons.push(new Polygon(p, sizeRange));
   }
 };
 

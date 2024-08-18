@@ -8,9 +8,12 @@ import { useMediaQuery } from 'react-responsive';
 
 
 function Contact() {
+  const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
+  const numPolygons = isMobile ? 200 : 600;
+  const sizeRange = isMobile ? { min: 1, max: 3 } : { min: 2, max: 5 };
 
   return (
-    <Box sketch={<Sketch setup={polygonSetup} draw={polygonDraw} />}>
+    <Box sketch={<Sketch setup={(p) => polygonSetup(p, { numPolygons, sizeRange })} draw={(p) => polygonDraw(p)} />}>
       <Link to="/" className={styles.homeLink}>HOME</Link>
       <div className={styles.content}>
         <header className={styles.header}>
@@ -28,7 +31,6 @@ function Contact() {
               I am always interested in working on interesting projects that push boundaries in design. If you want to collaborate on
               a project, feel free to connect via email.
             </p>
-
             <p className={styles.introText}>If you haven't seen my projects already,
               you can browse them <Link className={styles.projectLink}
                 to='/projects' > here</Link>!</p>
@@ -38,9 +40,9 @@ function Contact() {
               <div className={styles.links}>
                 <p className={styles.label}>SOCIAL LINKS</p>
                 <ul>
-                  <li><a href="https://github.com" target="_blank">GitHub</a></li>
-                  <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
-                  <li><a target='_blank'>Mixcloud</a></li>
+                  <li><a href="https://github.com/m-usaid99" target="_blank">GitHub</a></li>
+                  <li><a href="https://www.linkedin.com/in/muhammad-usaid-rehman-aa8b64202/" target="_blank">LinkedIn</a></li>
+                  <li><a href="https://www.mixcloud.com/abeginnersmind/" target='_blank'>Mixcloud</a></li>
                 </ul>
               </div>
               <p className={styles.musicText}>You can check out my explorations in music
