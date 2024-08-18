@@ -19,6 +19,7 @@
   font-weight: 300;
   color: var(--text-color-primary);
   margin-bottom: 0;
+  margin-left: 10px;
 }
 
 .description {
@@ -28,15 +29,17 @@
   margin-bottom: auto;
   margin-top: 0;
   font-weight: 600;
+  margin-left: 10px;
 }
 
 .loremText {
-  font-size: 0.9vw;
+  font-size: 1vw;
   /* Consistent with the description */
   color: var(--text-color-secondary);
   margin-top: auto;
   width: 30%;
   font-weight: 700;
+  margin-left: 10px;
 }
 
 .rightColumn {
