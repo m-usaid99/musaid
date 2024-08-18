@@ -1,5 +1,5 @@
 .content {
-  padding: 20vh 10vw 0;
+  padding: 15vh 10vw 0;
   /* Add padding at the top, and adjust left/right padding as needed */
   margin: 0 auto;
   display: flex;
@@ -22,15 +22,15 @@
 
 .divider {
   width: 100%;
-  border: 1px solid var(--color-white);
+  border: 2px solid var(--color-white);
   margin-bottom: 0;
 }
 
 .columns {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   width: 100%;
+  margin-top: -20px;
 }
 
 .leftColumn,
@@ -43,6 +43,7 @@
   list-style: none;
   padding: 0;
   margin: 0;
+  margin-top: 35px;
   display: flex;
   flex-direction: column;
 }
@@ -75,8 +76,8 @@
 .leftColumn {
   text-align: left;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  /* Vertically align the label and the email address */
 }
 
 .leftColumn a {
@@ -132,5 +133,132 @@
 }
 
 .links .label {
-  margin-top: 10;
+  margin-top: -25px;
+}
+
+.emailContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.introText {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  color: var(--text-color-secondary);
+  line-height: 1.25;
+  text-align: left;
+  width: 60%;
+  /* Make sure the text takes up full width */
+  word-wrap: break-word;
+  font-weight: 600;
+  /* Ensure text wraps to the next line */
+}
+
+.projectLink {
+  display: inline !important;
+  /* or inline-block */
+  text-decoration: underline !important;
+  color: var(--text-color-secondary) !important;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.projectLink::before {
+  content: none !important;
+  /* Ensure no unwanted pseudo-elements */
+}
+
+.projectLink:hover {
+  text-decoration: line-through !important;
+}
+
+.socialContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.musicText {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  color: var(--text-color-secondary);
+  line-height: 1.25;
+  text-align: right;
+  width: 60%;
+  /* Make sure the text takes up full width */
+  word-wrap: break-word;
+  font-weight: 600;
+  /* Ensure text wraps to the next line */
+}
+
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+  .content {
+    padding-top: 10vh;
+  }
+
+  .homeLink {
+    transform: rotate(0deg);
+    padding: 2vh 4vh;
+  }
+
+  .columns {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .title {
+    font-size: 4vh;
+  }
+
+  .leftColumn,
+  .rightColumn {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .introText {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .emailContainer {
+    margin-left: 0;
+  }
+
+  .musicText {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .label {
+    font-size: 2vh;
+  }
+
+  .links a {
+    font-size: 16px;
+  }
+
+  .leftColumn a::before {
+    font-size: 16px;
+  }
+
+  .leftColumn a {
+    font-size: 16px;
+  }
+
+  .links li::before {
+    font-size: 16px;
+  }
+
+  .emailContainer a {
+    font-size: 2vh;
+  }
+
+  .rightColumn a {
+    font-size: 16px;
+  }
+
 }
