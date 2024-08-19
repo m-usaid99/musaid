@@ -1,10 +1,11 @@
 import React from 'react';
+import Box from './Box';
 
 function About() {
   return (
-    <div>
-      <h1>About Page</h1>
-    </div>
+    <Box>
+      <h1>About</h1>
+    </Box>
   );
 }
 
