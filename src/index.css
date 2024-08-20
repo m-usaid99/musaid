@@ -40,3 +40,8 @@ a {
 a:hover {
   color: var(--text-color-secondary);
 }
+
+canvas {
+  width: fit-content;
+  overflow-y: hidden;
+}
