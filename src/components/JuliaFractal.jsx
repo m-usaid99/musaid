@@ -37,7 +37,7 @@ function JuliaFractalSketch({ setup, draw }) {
         );
       };
       p.mouseWheel = (event) => {
-        const zoomFactor = 1.5; // Controls how fast you zoom in/out
+        const zoomFactor = 1.25; // Controls how fast you zoom in/out
         const maxZoomOut = 0.75; // Set this to the largest scale you want to allow (farthest zoom out)
 
         if (event.delta > 0) {

@@ -1,0 +1,63 @@
+/* About.module.css */
+
+.aboutContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* Full height */
+  text-align: center;
+  padding: 20px;
+}
+
+.introSection {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.title {
+  font-size: 4rem;
+  /* Big heading */
+  font-weight: bold;
+  margin-bottom: 30px;
+  /* Increased spacing between title and text */
+  animation: slideIn 1s ease-out forwards;
+}
+
+.introText {
+  font-size: 1.2rem;
+  /* Smaller text */
+  font-weight: bold;
+  /* Bold text */
+  line-height: 1.5;
+  /* Reduced line spacing */
+  color: #eeeeee;
+  /* Whiter text */
+  animation: fadeIn 1.5s ease-out forwards;
+}
+
+/* Slide-in animation for title */
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Fade-in animation for intro text */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
