@@ -22,7 +22,8 @@ void main() {
         n++;
     }
 
-float colorValue = pow(float(n) / float(maxIterations), 2.0); 
-    fragColor = vec4(vec3(colorValue), 1.0);
+    float brightness = 0.75;
+    float colorValue = pow(float(n) / float(maxIterations), 2.0); 
+    fragColor = vec4(vec3(colorValue) * brightness, 1.0);
 }
 

@@ -9,7 +9,7 @@ function JuliaFractalSketch({ setup, draw }) {
       let canvas;
       let juliaShader;
       let juliaC;
-      let zoom = 1.0;
+      let zoom = 0.75;
 
       p.preload = () => {
         juliaShader = p.loadShader('/shaders/vertexShader.vert', '/shaders/juliaShader.frag');
@@ -19,6 +19,7 @@ function JuliaFractalSketch({ setup, draw }) {
         canvas = p.createCanvas(sketchRef.current.clientWidth, sketchRef.current.clientHeight, p.WEBGL);
         canvas.parent(sketchRef.current);
         juliaC = p.createVector(-0.70176, -0.3842);
+        p.blendMode(p.BLEND);
         p.noLoop();
       };
 
@@ -36,18 +37,17 @@ function JuliaFractalSketch({ setup, draw }) {
         );
       };
       p.mouseWheel = (event) => {
-        const zoomFactor = 1.25; // Controls how fast you zoom in/out
-        const maxZoomOut = 1.0; // Set this to the largest scale you want to allow (farthest zoom out)
+        const zoomFactor = 1.5; // Controls how fast you zoom in/out
+        const maxZoomOut = 0.75; // Set this to the largest scale you want to allow (farthest zoom out)
 
         if (event.delta > 0) {
           // Zoom out, but don't go beyond maxZoomOut
           zoom = Math.min(zoom * zoomFactor, maxZoomOut);
         } else {
           // Zoom in, but ensure zoom doesn't go below 1.0 (original size or closer)
-          zoom = Math.max(zoom / zoomFactor, 0.025);
+          zoom = Math.max(zoom / zoomFactor, 0.0175);
         }
 
-        console.log("Zoom level:", zoom); // Debugging to ensure zoom is updated
         p.redraw();
       };
 
