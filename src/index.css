@@ -41,6 +41,10 @@ a:hover {
   color: var(--text-color-secondary);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 canvas {
   width: fit-content;
   overflow-y: hidden;

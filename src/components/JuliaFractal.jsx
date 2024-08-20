@@ -1,25 +1,41 @@
 import React, { useRef, useEffect } from 'react';
 import p5 from 'p5';
 
-function JuliaFractalSketch({ setup, draw }) {
+function JuliaFractalSketch() {
   const sketchRef = useRef();
+  const p5InstanceRef = useRef(null);
+  const zoomRef = useRef(1.0);
+
+  // Set your minimum and maximum zoom values
+  const minZoom = 0.0175;  // Minimum zoom level (farthest zoom out)
+  const maxZoom = 0.75;  // Maximum zoom level (closest zoom in)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      zoomRef.current = Math.max(minZoom, Math.min(maxZoom, 1.0 - scrollY * 0.001));
+      p5InstanceRef.current.redraw();
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   useEffect(() => {
     const sketch = new p5(p => {
-      let canvas;
       let juliaShader;
       let juliaC;
-      let zoom = 0.75;
 
       p.preload = () => {
         juliaShader = p.loadShader('/shaders/vertexShader.vert', '/shaders/juliaShader.frag');
       };
 
       p.setup = () => {
-        canvas = p.createCanvas(sketchRef.current.clientWidth, sketchRef.current.clientHeight, p.WEBGL);
-        canvas.parent(sketchRef.current);
+        p.createCanvas(sketchRef.current.clientWidth, sketchRef.current.clientHeight, p.WEBGL).parent(sketchRef.current);
         juliaC = p.createVector(-0.70176, -0.3842);
-        p.blendMode(p.BLEND);
         p.noLoop();
       };
 
@@ -27,7 +43,7 @@ function JuliaFractalSketch({ setup, draw }) {
         p.shader(juliaShader);
         juliaShader.setUniform('juliaC', [-0.70176, -0.3842]);
         juliaShader.setUniform('resolution', [p.width, p.height]);
-        juliaShader.setUniform('zoom', zoom);
+        juliaShader.setUniform('zoom', zoomRef.current);
 
         p.quad(
           -p.width / 2, -p.height / 2,
@@ -36,47 +52,29 @@ function JuliaFractalSketch({ setup, draw }) {
           -p.width / 2, p.height / 2
         );
       };
-      p.mouseWheel = (event) => {
-        const zoomFactor = 1.25; // Controls how fast you zoom in/out
-        const maxZoomOut = 0.75; // Set this to the largest scale you want to allow (farthest zoom out)
 
+      p.mouseWheel = (event) => {
         if (event.delta > 0) {
-          // Zoom out, but don't go beyond maxZoomOut
-          zoom = Math.min(zoom * zoomFactor, maxZoomOut);
+          zoomRef.current = Math.max(minZoom, zoomRef.current / 1.05);
         } else {
-          // Zoom in, but ensure zoom doesn't go below 1.0 (original size or closer)
-          zoom = Math.max(zoom / zoomFactor, 0.0175);
+          zoomRef.current = Math.min(maxZoom, zoomRef.current * 1.05);
         }
 
         p.redraw();
       };
-
-
 
       p.windowResized = () => {
         p.resizeCanvas(sketchRef.current.clientWidth, sketchRef.current.clientHeight);
         p.redraw();
       };
 
-      // Redraw the canvas on transition end
-      const handleTransitionEnd = () => {
-        p.resizeCanvas(sketchRef.current.clientWidth, sketchRef.current.clientHeight);
-        p.redraw();  // Force a redraw
-      };
-
-      // Add event listener for transition end
-      sketchRef.current.addEventListener('transitionend', handleTransitionEnd);
-
-      return () => {
-        sketchRef.current.removeEventListener('transitionend', handleTransitionEnd);
-        sketch.remove();
-      };
-    });
+      p5InstanceRef.current = p;
+    }, sketchRef.current);
 
     return () => {
-      sketch.remove();
+      p5InstanceRef.current.remove();
     };
-  }, [setup, draw]);
+  }, []);
 
   return <div ref={sketchRef} style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, zIndex: 0 }}></div>;
 }
