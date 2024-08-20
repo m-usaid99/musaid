@@ -6,23 +6,8 @@ function JuliaFractalSketch() {
   const p5InstanceRef = useRef(null);
   const zoomRef = useRef(1.0);
 
-  // Set your minimum and maximum zoom values
   const minZoom = 0.0175;  // Minimum zoom level (farthest zoom out)
   const maxZoom = 0.75;  // Maximum zoom level (closest zoom in)
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      zoomRef.current = Math.max(minZoom, Math.min(maxZoom, 1.0 - scrollY * 0.001));
-      p5InstanceRef.current.redraw();
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
 
   useEffect(() => {
     const sketch = new p5(p => {
@@ -36,6 +21,7 @@ function JuliaFractalSketch() {
       p.setup = () => {
         p.createCanvas(sketchRef.current.clientWidth, sketchRef.current.clientHeight, p.WEBGL).parent(sketchRef.current);
         juliaC = p.createVector(-0.70176, -0.3842);
+        zoomRef.current = 0.75; // Explicitly set initial zoom level
         p.noLoop();
       };
 
@@ -52,14 +38,12 @@ function JuliaFractalSketch() {
           -p.width / 2, p.height / 2
         );
       };
-
       p.mouseWheel = (event) => {
         if (event.delta > 0) {
           zoomRef.current = Math.max(minZoom, zoomRef.current / 1.05);
         } else {
           zoomRef.current = Math.min(maxZoom, zoomRef.current * 1.05);
         }
-
         p.redraw();
       };
 
