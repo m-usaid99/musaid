@@ -19,6 +19,7 @@
   width: 95%;
   /* Adjust width to take up most of the screen */
   height: 95%;
+  overflow: hidden;
   /* Adjust height to take up most of the screen */
 }
 

@@ -1,10 +1,10 @@
 import React from 'react';
 import Box from './Box';
+import JuliaFractal from './SimpleShaderSketch';
 
 function About() {
   return (
     <Box>
-      <h1>About</h1>
     </Box>
   );
 }
