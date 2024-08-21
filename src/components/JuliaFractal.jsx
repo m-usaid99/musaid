@@ -19,6 +19,7 @@ function JuliaFractalSketch() {
       };
 
       p.setup = () => {
+        p.pixelDensity(1);
         p.createCanvas(sketchRef.current.clientWidth, sketchRef.current.clientHeight, p.WEBGL).parent(sketchRef.current);
         juliaC = p.createVector(-0.70176, -0.3842);
         zoomRef.current = 0.75; // Explicitly set initial zoom level
@@ -48,7 +49,10 @@ function JuliaFractalSketch() {
       };
 
       p.windowResized = () => {
-        p.resizeCanvas(sketchRef.current.clientWidth, sketchRef.current.clientHeight);
+        const pixelDensity = p.pixelDensity();
+        const width = sketchRef.current.clientWidth * pixelDensity;
+        const height = sketchRef.current.clientHeight * pixelDensity;
+        p.resizeCanvas(width, height);
         p.redraw();
       };
 

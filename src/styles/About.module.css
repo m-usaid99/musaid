@@ -5,15 +5,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
   /* Full height */
   text-align: center;
-  padding: 20px;
-}
-
-.introSection {
-  max-width: 800px;
-  margin: 0 auto;
   padding: 20px;
 }
 
