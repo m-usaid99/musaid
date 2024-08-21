@@ -13,6 +13,11 @@ function About() {
             My work focuses on blending artistry with precision, always exploring new ways to innovate.
           </p>
         </section>
+        <div className={styles.scrollIndicator}>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M12 21l-12-18h24z" />
+          </svg>
+        </div>
         <section className={styles.paragraphSection}>
           <p className={styles.additionalText}>
             My background in computer science and mathematics fueled my interest in understanding and solving complex problems. Studying theoretical computer science and cryptography deepened my appreciation for precision and abstraction.
