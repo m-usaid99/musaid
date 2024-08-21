@@ -1,44 +1,34 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Box from './Box';
 import styles from '../styles/About.module.css';
 
 function About() {
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const text2 = document.getElementById('text2');
-      const text3 = document.getElementById('text3');
-
-      // Adjust scroll thresholds to control when text appears/disappears
-      if (scrollY > 200 && scrollY < 600) {
-        text2.classList.add('scroll-visible');
-      } else {
-        text2.classList.remove('scroll-visible');
-      }
-
-      if (scrollY > 600 && scrollY < 1000) {
-        text3.classList.add('scroll-visible');
-      } else {
-        text3.classList.remove('scroll-visible');
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
   return (
-    <Box >
+    <Box>
       <div className={styles.aboutContainer}>
-        <div className={styles.introSection}>
+        <div className={styles.blockOne}>
           <h1 className={styles.title}>About Me</h1>
           <p className={styles.introText}>
-            I’m a web developer who merges design, creativity, and technical structure.
-            My work focuses on blending artistry with precision, always exploring new ways to innovate.</p>
+            I’m a web developer who merges design, creativity, and technical structure. My work focuses on blending artistry with precision, always exploring new ways to innovate.
+          </p>
+        </div>
+
+        <div className={styles.blockTwo}>
+          <p className={styles.subText}>
+            I have a strong background in both frontend and backend development, with a particular interest in creative coding and generative art.
+          </p>
+        </div>
+
+        <div className={styles.blockThree}>
+          <p className={styles.subText}>
+            My approach to projects is holistic, considering both the technical and aesthetic aspects to create seamless experiences.
+          </p>
+        </div>
+
+        <div className={styles.blockFour}>
+          <p className={styles.subText}>
+            Constantly learning and evolving, I aim to stay at the forefront of technology and design trends.
+          </p>
         </div>
       </div>
     </Box>
@@ -46,3 +36,4 @@ function About() {
 }
 
 export default About;
+

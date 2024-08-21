@@ -1,44 +1,42 @@
-/* About.module.css */
-
 .aboutContainer {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  height: 100vh;
-  /* Full height */
-  text-align: center;
-  padding: 20px;
+  padding: 40px;
+  background-color: transparent;
+  /* Removed background color */
 }
 
-.introSection {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
+.blockOne,
+.blockTwo,
+.blockThree,
+.blockFour {
+  width: 75%;
+  max-width: 900px;
+  margin: 40px 0;
+  padding: 40px;
+  color: white;
+  text-align: left;
+  background-color: transparent;
+  /* Transparent background */
+  border-bottom: 2px solid #ffffff33;
+  /* Subtle bottom border for separation */
 }
 
 .title {
-  font-size: 4rem;
-  /* Big heading */
+  font-size: 5rem;
   font-weight: bold;
-  margin-bottom: 30px;
-  /* Increased spacing between title and text */
-  animation: slideIn 1s ease-out forwards;
+  margin-bottom: 40px;
 }
 
-.introText {
-  font-size: 1.2rem;
-  /* Smaller text */
-  font-weight: bold;
-  /* Bold text */
-  line-height: 1.5;
-  /* Reduced line spacing */
-  color: #eeeeee;
-  /* Whiter text */
-  animation: fadeIn 1.5s ease-out forwards;
+.introText,
+.subText {
+  font-size: 2rem;
+  line-height: 1.8;
+  color: #ffffff;
 }
 
-/* Slide-in animation for title */
 @keyframes slideIn {
   0% {
     transform: translateX(-100%);
@@ -51,7 +49,6 @@
   }
 }
 
-/* Fade-in animation for intro text */
 @keyframes fadeIn {
   0% {
     opacity: 0;

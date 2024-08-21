@@ -4,7 +4,7 @@ import p5 from 'p5';
 function JuliaFractalSketch() {
   const sketchRef = useRef();
   const p5InstanceRef = useRef(null);
-  const zoomRef = useRef(1.0);
+  const zoomRef = useRef(0.75);
 
   // Set your minimum and maximum zoom values
   const minZoom = 0.0175;  // Minimum zoom level (farthest zoom out)
@@ -55,9 +55,9 @@ function JuliaFractalSketch() {
 
       p.mouseWheel = (event) => {
         if (event.delta > 0) {
-          zoomRef.current = Math.max(minZoom, zoomRef.current / 1.05);
+          zoomRef.current = Math.max(minZoom, zoomRef.current / 1.25);
         } else {
-          zoomRef.current = Math.min(maxZoom, zoomRef.current * 1.05);
+          zoomRef.current = Math.min(maxZoom, zoomRef.current * 1.25);
         }
 
         p.redraw();
