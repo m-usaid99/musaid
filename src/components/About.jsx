@@ -3,6 +3,13 @@ import Box from './Box';
 import styles from '../styles/About.module.css';
 import JuliaFractalSketch from './JuliaFractal';
 
+// TODO: - (22/08/24)
+// - Add a HomeLink button (copy paste from some other component)
+// - add a simple skills component 
+// - add a button to jump to skill component
+// - initiate skill cytoscape graph
+
+
 function About() {
   const contentRef = useRef(null);
 
