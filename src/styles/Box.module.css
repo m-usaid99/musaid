@@ -19,7 +19,6 @@
   width: 95%;
   /* Adjust width to take up most of the screen */
   height: 95%;
-  overflow: hidden;
   /* Adjust height to take up most of the screen */
 }
 
@@ -29,6 +28,7 @@
   z-index: 2;
   overflow-y: scroll;
   scrollbar-width: none;
+  max-height: 100vh;
   /* Ensure content is above the sketch */
 }
 

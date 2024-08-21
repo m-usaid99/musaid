@@ -44,8 +44,3 @@ a:hover {
 html {
   scroll-behavior: smooth;
 }
-
-canvas {
-  width: fit-content;
-  overflow-y: hidden;
-}

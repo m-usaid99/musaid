@@ -1,12 +1,11 @@
 import React from 'react';
 import styles from '../styles/Box.module.css';
-import JuliaFractalSketch from './JuliaFractal';
 
-function Box({ children, sketch }) {
+function Box({ children, sketch, altSketch }) {
   return (
     <div className={styles.box}>
-      {/* {sketch} */}
-      {sketch ? sketch : <JuliaFractalSketch />}
+      {sketch ? sketch : altSketch}
+
       <div className={styles.content}>
         {children}
       </div>
