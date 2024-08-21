@@ -1,9 +1,6 @@
 .aboutContainer {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
   padding: 20px;
 }
 
@@ -14,19 +11,65 @@
   align-items: center;
   height: 100vh;
   /* Full viewport height */
+  text-align: center;
 }
 
+/* Paragraph sections adjustments */
 .paragraphSection {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  height: 100vh;
-  /* Full viewport height for each section */
+  height: 50vh;
+  margin-bottom: 40px;
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
+.paragraphSection:nth-child(2) {
+  justify-content: flex-start;
+}
+
+.paragraphSection:nth-child(3) {
+  justify-content: flex-end;
+}
+
+.paragraphSection:nth-child(4) {
+  justify-content: flex-start;
+}
+
+.paragraphSection:nth-child(5) {
+  justify-content: center;
+}
+
+.paragraphSection:nth-child(6) {
+  justify-content: flex-start;
+}
+
+.paragraphSection:nth-child(7) {
+  justify-content: flex-end;
+}
+
+.paragraphSection:nth-child(8) {
+  justify-content: flex-start;
+}
+
+.paragraphSection:nth-child(9) {
+  justify-content: center;
+}
+
+.additionalText {
+  font-size: 1.4rem;
+  line-height: 1.4;
+  color: #dddddd;
+  max-width: 70%;
+  /* Reduced max-width to bring text closer */
+  margin: 0 auto;
+  opacity: 0;
+  animation: fadeInText 2s ease-out forwards 1s;
 }
 
 .title {
   font-size: 5rem;
-  /* Bigger heading */
   font-weight: bold;
   margin-bottom: 20px;
   color: #ffffff;
@@ -36,16 +79,28 @@
 .introText,
 .additionalText {
   font-size: 1.4rem;
-  /* Larger text */
   font-weight: 500;
   line-height: 1.2;
   color: #dddddd;
-  max-width: 800px;
-  margin: 0 auto;
+  max-width: 600px;
+  margin: 0;
   opacity: 0;
-  /* Initially hidden */
   animation: fadeInText 2s ease-out forwards 1s;
-  /* Delayed fade-in after the title */
+}
+
+.scrollIndicator {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: bounce 2s infinite;
+}
+
+.scrollIndicator svg {
+  fill: #ffffff;
+  width: 40px;
+  height: 40px;
+  opacity: 0.75;
 }
 
 /* Slide-in animation for the title */
@@ -70,21 +125,6 @@
   100% {
     opacity: 1;
   }
-}
-
-.scrollIndicator {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  animation: bounce 2s infinite;
-}
-
-.scrollIndicator svg {
-  fill: #ffffff;
-  width: 40px;
-  height: 40px;
-  opacity: 0.75;
 }
 
 /* Bouncing animation */

@@ -20,17 +20,37 @@ function About() {
         </div>
         <section className={styles.paragraphSection}>
           <p className={styles.additionalText}>
-            My background in computer science and mathematics fueled my interest in understanding and solving complex problems. Studying theoretical computer science and cryptography deepened my appreciation for precision and abstraction.
+            Grounded in pure mathematics and computer science, I’ve cultivated a deep understanding of theoretical computer science and cryptography. My academic journey sharpened my ability to think abstractly and approach complex problems with precision.
           </p>
         </section>
         <section className={styles.paragraphSection}>
           <p className={styles.additionalText}>
-            Transitioning to web development, I’ve merged these interests with a passion for design, focusing on creating visually engaging and structurally sound applications.
+            As a Teaching Assistant for courses like Algorithms and Database Systems, I developed a knack for communicating intricate concepts clearly, laying a solid foundation for my technical career.
           </p>
         </section>
         <section className={styles.paragraphSection}>
           <p className={styles.additionalText}>
-            I’m eager to delve deeper into design and generative art, creating innovative visual experiences. My growing interest in cryptography also drives me to explore new frontiers in cybersecurity, merging creativity with technical precision.
+            My transition into web development was fueled by a desire to merge technical skill with creative expression. Mastering frontend technologies like JavaScript, HTML/CSS, and React has allowed me to create applications that are both engaging and structurally sound.
+          </p>
+        </section>
+        <section className={styles.paragraphSection}>
+          <p className={styles.additionalText}>
+            In web development, I’ve found a new way to channel my love for design, using p5.js and WebGL to infuse creativity into my projects. These tools help me push the boundaries of conventional web design, creating websites that are both functional and visually unique.
+          </p>
+        </section>
+        <section className={styles.paragraphSection}>
+          <p className={styles.additionalText}>I balance frontend and backend development to create applications that are both functional and visually appealing, blending backend logic with intuitive, creative design.
+          </p>
+
+        </section>
+        <section className={styles.paragraphSection}>
+          <p className={styles.additionalText}>
+            I have a variety of projects that explore different areas, from web development and design to generative art and music; reflecting my curiosity and passion for technical innovation & creative expression.
+          </p>
+        </section>
+        <section className={styles.paragraphSection}>
+          <p className={styles.additionalText}>
+            Creativity drives me, whether through playing instruments, diving into generative art, or curating music mixes. I enjoy merging art with technology, using code to create personalized and innovative audiovisual experiences.
           </p>
         </section>
       </div>
