@@ -1,11 +1,46 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import Box from './Box';
 import styles from '../styles/About.module.css';
+import JuliaFractalSketch from './JuliaFractal';
 
 function About() {
+  const contentRef = useRef(null);
+
+  useEffect(() => {
+    const handleTouchStart = (event) => {
+      if (event.touches.length === 2) {
+        const dx = event.touches[0].pageX - event.touches[1].pageX;
+        const dy = event.touches[0].pageY - event.touches[1].pageY;
+        contentRef.current.startDistance = Math.sqrt(dx * dx + dy * dy);
+      }
+    };
+
+    const handleTouchMove = (event) => {
+      if (event.touches.length === 2) {
+        const dx = event.touches[0].pageX - event.touches[1].pageX;
+        const dy = event.touches[0].pageY - event.touches[1].pageY;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+        const zoomFactor = distance / contentRef.current.startDistance;
+
+        if (typeof JuliaFractalSketch.updateZoom === 'function') {
+          JuliaFractalSketch.updateZoom(zoomFactor);
+        }
+      }
+    };
+
+    const contentElement = contentRef.current;
+    contentElement.addEventListener('touchstart', handleTouchStart, { passive: true });
+    contentElement.addEventListener('touchmove', handleTouchMove, { passive: true });
+
+    return () => {
+      contentElement.removeEventListener('touchstart', handleTouchStart);
+      contentElement.removeEventListener('touchmove', handleTouchMove);
+    };
+  }, []);
+
   return (
-    <Box>
-      <div className={styles.aboutContainer}>
+    <Box altSketch={<JuliaFractalSketch contentRef={contentRef} />}>
+      <div className={styles.aboutContainer} ref={contentRef}>
         <section className={styles.centerSection}>
           <h1 className={styles.title}>About Me</h1>
           <p className={styles.introText}>

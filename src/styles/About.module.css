@@ -1,3 +1,4 @@
+/* General Layout */
 .aboutContainer {
   display: flex;
   flex-direction: column;
@@ -10,11 +11,9 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  /* Full viewport height */
   text-align: center;
 }
 
-/* Paragraph sections adjustments */
 .paragraphSection {
   display: flex;
   justify-content: flex-start;
@@ -25,34 +24,19 @@
   padding-right: 15%;
 }
 
-.paragraphSection:nth-child(2) {
-  justify-content: flex-start;
-}
-
-.paragraphSection:nth-child(3) {
-  justify-content: flex-end;
-}
-
-.paragraphSection:nth-child(4) {
-  justify-content: flex-start;
-}
-
-.paragraphSection:nth-child(5) {
-  justify-content: center;
-}
-
-.paragraphSection:nth-child(6) {
-  justify-content: flex-start;
-}
-
-.paragraphSection:nth-child(7) {
-  justify-content: flex-end;
-}
-
+.paragraphSection:nth-child(2),
+.paragraphSection:nth-child(4),
+.paragraphSection:nth-child(6),
 .paragraphSection:nth-child(8) {
   justify-content: flex-start;
 }
 
+.paragraphSection:nth-child(3),
+.paragraphSection:nth-child(7) {
+  justify-content: flex-end;
+}
+
+.paragraphSection:nth-child(5),
 .paragraphSection:nth-child(9) {
   justify-content: center;
 }
@@ -62,7 +46,6 @@
   line-height: 1.4;
   color: #dddddd;
   max-width: 70%;
-  /* Reduced max-width to bring text closer */
   margin: 0 auto;
   opacity: 0;
   animation: fadeInText 2s ease-out forwards 1s;
@@ -144,5 +127,63 @@
 
   60% {
     transform: translateX(-50%) translateY(-5px);
+  }
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+  .title {
+    font-size: 4rem;
+  }
+
+  .introText,
+  .additionalText {
+    font-size: 1.2rem;
+  }
+
+  .paragraphSection {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .title {
+    font-size: 3rem;
+  }
+
+  .introText,
+  .additionalText {
+    font-size: 1rem;
+    width: 70%;
+    padding: 5px;
+  }
+
+  .paragraphSection {
+    height: 40vh;
+    width: 100%;
+    padding: 0;
+    margin-bottom: 20px;
+  }
+
+  .paragraphSection:nth-child(2),
+  .paragraphSection:nth-child(4),
+  .paragraphSection:nth-child(6),
+  .paragraphSection:nth-child(8) {
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .paragraphSection:nth-child(3),
+  .paragraphSection:nth-child(7) {
+    justify-content: flex-end;
+    text-align: right;
+  }
+
+  .paragraphSection:nth-child(5),
+  .paragraphSection:nth-child(9) {
+    justify-content: center;
+    text-align: center;
   }
 }
