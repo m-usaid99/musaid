@@ -1,38 +1,55 @@
-/* About.module.css */
-
 .aboutContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* Full height */
   text-align: center;
   padding: 20px;
 }
 
+.centerSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* Full viewport height */
+}
+
+.paragraphSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* Full viewport height for each section */
+}
+
 .title {
-  font-size: 4rem;
-  /* Big heading */
+  font-size: 5rem;
+  /* Bigger heading */
   font-weight: bold;
-  margin-bottom: 30px;
-  /* Increased spacing between title and text */
-  animation: slideIn 1s ease-out forwards;
+  margin-bottom: 20px;
+  color: #ffffff;
+  animation: slideInFromLeft 1s ease-out forwards;
 }
 
-.introText {
-  font-size: 1.2rem;
-  /* Smaller text */
-  font-weight: bold;
-  /* Bold text */
-  line-height: 1.5;
-  /* Reduced line spacing */
-  color: #eeeeee;
-  /* Whiter text */
-  animation: fadeIn 1.5s ease-out forwards;
+.introText,
+.additionalText {
+  font-size: 1.4rem;
+  /* Larger text */
+  font-weight: 500;
+  line-height: 1.2;
+  color: #dddddd;
+  max-width: 800px;
+  margin: 0 auto;
+  opacity: 0;
+  /* Initially hidden */
+  animation: fadeInText 2s ease-out forwards 1s;
+  /* Delayed fade-in after the title */
 }
 
-/* Slide-in animation for title */
-@keyframes slideIn {
+/* Slide-in animation for the title */
+@keyframes slideInFromLeft {
   0% {
     transform: translateX(-100%);
     opacity: 0;
@@ -44,8 +61,8 @@
   }
 }
 
-/* Fade-in animation for intro text */
-@keyframes fadeIn {
+/* Fade-in animation for text */
+@keyframes fadeInText {
   0% {
     opacity: 0;
   }
