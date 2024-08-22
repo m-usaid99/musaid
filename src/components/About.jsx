@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import Box from './Box';
 import styles from '../styles/About.module.css';
 import JuliaFractalSketch from './JuliaFractal';
+import SkillsGraph from './SkillsGraph';
 
 // TODO: - (22/08/24)
 // - Add a HomeLink button (copy paste from some other component)
@@ -94,6 +95,9 @@ function About() {
           <p className={styles.additionalText}>
             Creativity drives me, whether through playing instruments, diving into generative art, or curating music mixes. I enjoy merging art with technology, using code to create personalized and innovative audiovisual experiences.
           </p>
+        </section>
+        <section className={styles.skillsGraph}>
+          <SkillsGraph />
         </section>
       </div>
     </Box>

@@ -11,6 +11,10 @@
   },
   "dependencies": {
     "@p5-wrapper/react": "^4.4.2",
+    "cytoscape": "^3.30.2",
+    "cytoscape-cola": "^2.5.1",
+    "cytoscape-cose-bilkent": "^4.1.0",
+    "cytoscape-fcose": "^2.2.0",
     "dotenv": "^16.4.5",
     "framer-motion": "^11.3.24",
     "gsap": "^3.12.5",
