@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import Box from './Box';
 import styles from '../styles/About.module.css';
 import JuliaFractalSketch from './JuliaFractal';
-import SkillsGraph from './SkillsGraph';
+import SkillsGraph from './NewSkills';
 
 // TODO: - (22/08/24)
 // - Add a HomeLink button (copy paste from some other component)
