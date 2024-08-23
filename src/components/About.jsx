@@ -1,14 +1,14 @@
 import React, { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import Box from './Box';
-import styles from '../styles/About.module.css';
 import JuliaFractalSketch from './JuliaFractal';
 import SkillsGraph from './NewSkills';
+import styles from '../styles/About.module.css';
 
-// TODO: - (22/08/24)
+
+// TODO: - (23/08/24)
 // - Add a HomeLink button (copy paste from some other component)
-// - add a simple skills component 
 // - add a button to jump to skill component
-// - initiate skill cytoscape graph
 
 
 function About() {
@@ -48,6 +48,7 @@ function About() {
 
   return (
     <Box altSketch={<JuliaFractalSketch contentRef={contentRef} />}>
+      <Link to="/" className={styles.homeLink}>HOME</Link>
       <div className={styles.aboutContainer} ref={contentRef}>
         <section className={styles.centerSection}>
           <h1 className={styles.title}>ABOUT ME</h1>

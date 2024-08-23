@@ -2,6 +2,10 @@ import React, { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
 import { skillsData } from '../utils/skillsData';
 
+
+// TODO: - add more edges in skillsData
+// - figure out a responsive representation while maintaining some amound of creativity
+
 const SkillsGraph = () => {
   const svgRef = useRef();
 
