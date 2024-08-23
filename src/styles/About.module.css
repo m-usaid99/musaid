@@ -98,6 +98,17 @@
   width: 100%;
 }
 
+.skillsHeading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.skillsHeading h1 {
+  font-size: 3rem;
+}
+
 /* Slide-in animation for the title */
 @keyframes slideInFromLeft {
   0% {

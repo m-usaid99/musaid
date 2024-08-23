@@ -52,10 +52,10 @@ export const skillsData = {
     { data: { id: 'scikitLearn', label: 'Scikit-learn' } },
     { data: { id: 'pandas', label: 'Pandas' } },
     { data: { id: 'pytorch', label: 'PyTorch' } },
-    { data: { id: 'dataProcessing', label: 'Data Processing Tools' } },
+    { data: { id: 'dataProcessing', label: 'Data Processing Tools', type: 'sub1' } },
 
     // DevOps & Tools
-    { data: { id: 'devOpsTools', label: 'DevOps & Tools' }, type: 'main' },
+    { data: { id: 'devOpsTools', label: 'DevOps & Tools', type: 'main' } },
     { data: { id: 'git', label: 'Git/GitHub' } },
     { data: { id: 'docker', label: 'Docker' } },
     { data: { id: 'aws', label: 'AWS' } },
@@ -71,8 +71,8 @@ export const skillsData = {
 
     // Creative Skills
     { data: { id: 'creativeSkills', label: 'Creative Skills', type: 'main' } },
-    { data: { id: 'creativeCoding', label: 'Creative Coding' } },
-    { data: { id: 'musicAudio', label: 'Music & Audio' } },
+    { data: { id: 'creativeCoding', label: 'Creative Coding', type: 'sub1' } },
+    { data: { id: 'musicAudio', label: 'Music & Audio', type: 'sub1' } },
     { data: { id: 'mixing', label: 'Mixing' } },
     { data: { id: 'ableton', label: 'Ableton' } },
     { data: { id: 'curation', label: 'Curation' } },

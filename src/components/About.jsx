@@ -50,7 +50,7 @@ function About() {
     <Box altSketch={<JuliaFractalSketch contentRef={contentRef} />}>
       <div className={styles.aboutContainer} ref={contentRef}>
         <section className={styles.centerSection}>
-          <h1 className={styles.title}>About Me</h1>
+          <h1 className={styles.title}>ABOUT ME</h1>
           <p className={styles.introText}>
             I’m a web developer who merges design, creativity, and technical structure.
             My work focuses on blending artistry with precision, always exploring new ways to innovate.
@@ -95,6 +95,9 @@ function About() {
           <p className={styles.additionalText}>
             Creativity drives me, whether through playing instruments, diving into generative art, or curating music mixes. I enjoy merging art with technology, using code to create personalized and innovative audiovisual experiences.
           </p>
+        </section>
+        <section className={styles.skillsHeading}>
+          <h1>SKILLS</h1>
         </section>
         <section className={styles.skillsGraph}>
           <SkillsGraph />

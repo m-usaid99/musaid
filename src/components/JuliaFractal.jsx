@@ -51,9 +51,9 @@ function JuliaFractalSketch({ contentRef }) {
         const scrollThreshold = 0.1;
         if (Math.abs(event.delta) > scrollThreshold) {
           if (event.delta > 0) {
-            targetZoomRef.current = Math.max(minZoom, targetZoomRef.current / 1.25);
+            targetZoomRef.current = Math.max(minZoom, targetZoomRef.current / 1.45);
           } else {
-            targetZoomRef.current = Math.min(maxZoom, targetZoomRef.current * 1.25);
+            targetZoomRef.current = Math.min(maxZoom, targetZoomRef.current * 1.45);
           }
           p.redraw();
         }
