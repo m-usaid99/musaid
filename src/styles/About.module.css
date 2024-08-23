@@ -5,17 +5,39 @@
   padding: 20px;
 }
 
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  padding: 40px;
+  z-index: 1000;
+}
+
+.scrollButton {
+  font-size: 1.2rem;
+  background-color: var(--background-color-secondary);
+  color: var(--text-color-primary);
+  font-family: var(--font-primary);
+  border: 2px solid var(--text-color-secondary);
+  border-radius: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.scrollButton:hover {
+  text-decoration: line-through;
+}
+
 .homeLink {
   position: sticky;
-  top: 2vw;
-  left: 2vw;
-  padding: 1vw;
   color: var(--text-color-primary);
   text-decoration: none;
   font-size: 1.2rem;
   font-weight: 600;
   z-index: 1000;
-  transform: rotate(-90deg);
   letter-spacing: 5px;
 }
 
@@ -29,7 +51,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 80vh;
   text-align: center;
 }
 
@@ -228,5 +250,21 @@
   .paragraphSection:nth-child(9) {
     justify-content: center;
     text-align: center;
+  }
+
+  .homeLink {
+    position: sticky;
+    top: 4vw;
+    right: 4vw;
+    padding: 2vw;
+    color: var(--text-color-primary);
+    text-decoration: none;
+    font-size: 4vw;
+    font-weight: 600;
+    z-index: 1000;
+    letter-spacing: 5px;
+    transform: rotate(0deg);
+    text-align: right;
+    background-color: black;
   }
 }

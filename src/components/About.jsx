@@ -7,48 +7,18 @@ import styles from '../styles/About.module.css';
 
 
 // TODO: - (23/08/24)
-// - Add a HomeLink button (copy paste from some other component)
-// - add a button to jump to skill component
+// - figure out how to make button also zoom in background
 
 
 function About() {
   const contentRef = useRef(null);
 
-  useEffect(() => {
-    const handleTouchStart = (event) => {
-      if (event.touches.length === 2) {
-        const dx = event.touches[0].pageX - event.touches[1].pageX;
-        const dy = event.touches[0].pageY - event.touches[1].pageY;
-        contentRef.current.startDistance = Math.sqrt(dx * dx + dy * dy);
-      }
-    };
-
-    const handleTouchMove = (event) => {
-      if (event.touches.length === 2) {
-        const dx = event.touches[0].pageX - event.touches[1].pageX;
-        const dy = event.touches[0].pageY - event.touches[1].pageY;
-        const distance = Math.sqrt(dx * dx + dy * dy);
-        const zoomFactor = distance / contentRef.current.startDistance;
-
-        if (typeof JuliaFractalSketch.updateZoom === 'function') {
-          JuliaFractalSketch.updateZoom(zoomFactor);
-        }
-      }
-    };
-
-    const contentElement = contentRef.current;
-    contentElement.addEventListener('touchstart', handleTouchStart, { passive: true });
-    contentElement.addEventListener('touchmove', handleTouchMove, { passive: true });
-
-    return () => {
-      contentElement.removeEventListener('touchstart', handleTouchStart);
-      contentElement.removeEventListener('touchmove', handleTouchMove);
-    };
-  }, []);
-
   return (
-    <Box altSketch={<JuliaFractalSketch contentRef={contentRef} />}>
-      <Link to="/" className={styles.homeLink}>HOME</Link>
+    <Box altSketch={<JuliaFractalSketch contentRef={contentRef} />} >
+      <div className={styles.topBar}>
+        <Link to="/" className={styles.homeLink}>HOME</Link>
+        <button className={styles.scrollButton} >JUMP TO SKILLS</button>
+      </div>
       <div className={styles.aboutContainer} ref={contentRef}>
         <section className={styles.centerSection}>
           <h1 className={styles.title}>ABOUT ME</h1>
@@ -97,10 +67,10 @@ function About() {
             Creativity drives me, whether through playing instruments, diving into generative art, or curating music mixes. I enjoy merging art with technology, using code to create personalized and innovative audiovisual experiences.
           </p>
         </section>
-        <section className={styles.skillsHeading}>
+        <section className={styles.skillsHeading} >
           <h1>SKILLS</h1>
         </section>
-        <section className={styles.skillsGraph}>
+        <section className={styles.skillsGraph} >
           <SkillsGraph />
         </section>
       </div>
