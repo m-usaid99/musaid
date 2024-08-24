@@ -1,8 +1,8 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Box from './Box';
 import JuliaFractalSketch from './JuliaFractal';
-import SkillsGraph from './NewSkills';
+import SkillsGraph from './SkillsGraph';
 import styles from '../styles/About.module.css';
 
 
