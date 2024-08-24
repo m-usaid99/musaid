@@ -1,8 +1,10 @@
 import React, { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useMediaQuery } from 'react-responsive';
 import Box from './Box';
 import JuliaFractalSketch from './JuliaFractal';
 import SkillsGraph from './SkillsGraph';
+import MobileSkillsAccordion from './SkillsGraphMobile';
 import styles from '../styles/About.module.css';
 
 
@@ -13,6 +15,7 @@ import styles from '../styles/About.module.css';
 function About() {
   const contentRef = useRef(null);
   const skillsSectionRef = useRef(null);
+  const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
   const [fadeClass, setFadeClass] = useState('');
   const [isAtTop, setIsAtTop] = useState(true);
 
@@ -95,7 +98,7 @@ function About() {
           <h1>SKILLS</h1>
         </section>
         <section className={styles.skillsGraph} >
-          <SkillsGraph />
+          {isMobile ? <MobileSkillsAccordion /> : <SkillsGraph />}
         </section>
       </div>
     </Box>
