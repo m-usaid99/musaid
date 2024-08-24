@@ -45,7 +45,6 @@ export const skillsData = {
     { data: { id: 'scikitLearn', label: 'Scikit-learn', parent: 'aiMlDataScience' } },
     { data: { id: 'pandas', label: 'Pandas', parent: 'aiMlDataScience' } },
     { data: { id: 'pytorch', label: 'PyTorch', parent: 'aiMlDataScience' } },
-    { data: { id: 'dataProcessing', label: 'Data Processing Tools', type: 'sub1', parent: 'aiMlDataScience' } },
 
     { data: { id: 'devOpsTools', label: 'DevOps & Tools', type: 'main' } },
     { data: { id: 'git', label: 'Git/GitHub', parent: 'devOpsTools' } },
