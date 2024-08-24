@@ -36,7 +36,7 @@ const SkillsGraph = () => {
         .force('link', d3.forceLink(links).id(d => d.id).distance(125))  // Increase link distance
         .force('charge', d3.forceManyBody().strength(-600))  // Increase repulsion
         .force('center', d3.forceCenter(width / 2, height / 2))
-        .force('x', d3.forceX(width / 2).strength(0.025))  // Keep the graph centered
+        .force('x', d3.forceX(width / 2).strength(0.05))  // Keep the graph centered
         .force('y', d3.forceY(height / 2).strength(0.175))
         .force('collision', d3.forceCollide().radius(d => {
           if (d.group === 'main') return 90; // Collision radius for main nodes

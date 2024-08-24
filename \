@@ -19,6 +19,7 @@ function About() {
   const handleButtonClick = () => {
     setFadeClass('fade-out');
     setTimeout(() => {
+
       if (isAtTop) {
         skillsSectionRef.current.scrollIntoView({
           behavior: 'smooth',
@@ -31,7 +32,6 @@ function About() {
         });
       }
       setIsAtTop(!isAtTop); // Toggle the state
-      setFadeClass('fade-in');
     }, 300);
   };
 
@@ -39,9 +39,8 @@ function About() {
     <Box altSketch={<JuliaFractalSketch contentRef={contentRef} />} >
       <div className={styles.topBar}>
         <Link to="/" className={styles.homeLink}>HOME</Link>
-        <button className={`${styles.scrollButton} ${styles[fadeClass]}`} onClick={handleButtonClick}>
-          {isAtTop ? 'JUMP TO SKILLS' : 'GO TO TOP'}
-        </button>
+        <button className={styles.scrollButton} onClick={handleButtonClick} >
+          {isAtTop ? 'JUMP TO SKILLS' : 'GO TO TOP'}</button>
       </div>
       <div className={styles.aboutContainer} ref={contentRef}>
         <section className={styles.centerSection}>

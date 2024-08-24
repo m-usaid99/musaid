@@ -58,6 +58,7 @@
   margin-right: auto;
   width: fit-content;
   padding: 15px;
+  cursor: pointer;
 }
 
 .projectItem h2 {

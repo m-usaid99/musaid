@@ -25,6 +25,21 @@
   cursor: pointer;
   background: none;
   border: none;
+  transition: all 0.3s ease;
+}
+
+/* Optional: add a fade-out animation */
+.fade-out {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Optional: add a fade-in animation */
+.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .scrollButton:hover {
