@@ -132,6 +132,24 @@
   animation: fadeInText 2s ease-out forwards 1s;
 }
 
+
+.skillsSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.skillsText {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #dddddd;
+  max-width: 600px;
+  text-align: center;
+  margin: 0;
+}
+
 .scrollIndicator {
   position: absolute;
   bottom: 20px;
@@ -240,6 +258,11 @@
     padding: 5px;
   }
 
+  .skillsText {
+    width: 70%;
+    margin-bottom: 20px;
+  }
+
   .paragraphSection {
     height: 40vh;
     width: 100%;
@@ -281,5 +304,9 @@
     transform: rotate(0deg);
     text-align: right;
     background-color: black;
+  }
+
+  .scrollButton {
+    background: black;
   }
 }

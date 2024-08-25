@@ -38,6 +38,9 @@ function About() {
     }, 300);
   };
 
+  const mobileText = <p className={styles.skillsText}>View the full skills graph on a desktop for a richer experience. On mobile, explore the categories below to see detailed connections.</p>
+  const desktopText = <p className={styles.skillsText}>Explore my diverse skill set visualized in this interactive graph. Each category highlights my expertise, with connections showing the relationships between different skills. Click on any node to dive deeper into the tools and technologies I use.</p>
+
   return (
     <Box altSketch={<JuliaFractalSketch contentRef={contentRef} />} >
       <div className={styles.topBar}>
@@ -94,12 +97,15 @@ function About() {
             Creativity drives me, whether through playing instruments, diving into generative art, or curating music mixes. I enjoy merging art with technology, using code to create personalized and innovative audiovisual experiences.
           </p>
         </section>
-        <section className={styles.skillsHeading} ref={skillsSectionRef}>
-          <h1>SKILLS</h1>
-        </section>
-        <section className={styles.skillsGraph} >
-          {isMobile ? <MobileSkillsAccordion /> : <SkillsGraph />}
-        </section>
+        <div className={styles.skillsSection}>
+          <section className={styles.skillsHeading} ref={skillsSectionRef}>
+            <h1>SKILLS</h1>
+          </section>
+          {isMobile ? mobileText : desktopText}
+          <section className={styles.skillsGraph} >
+            {isMobile ? <MobileSkillsAccordion /> : <SkillsGraph />}
+          </section>
+        </div>
       </div>
     </Box>
   );

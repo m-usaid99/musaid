@@ -106,7 +106,6 @@ export const skillsData = {
     { data: { id: 'ml-scikitLearn', source: 'aiMlDataScience', target: 'scikitLearn' } },
     { data: { id: 'ml-pandas', source: 'aiMlDataScience', target: 'pandas' } },
     { data: { id: 'ml-pytorch', source: 'aiMlDataScience', target: 'pytorch' } },
-    { data: { id: 'ml-dataProcessing', source: 'aiMlDataScience', target: 'dataProcessing' } },
 
 
     // devops and shit
@@ -177,15 +176,12 @@ export const skillsData = {
 
     { data: { id: 'tensorflow-python', source: 'tensorflow', target: 'python' } },
     { data: { id: 'tensorflow-algorithms', source: 'tensorflow', target: 'algorithms' } },
-    { data: { id: 'tensorflow-dataProcessing', source: 'tensorflow', target: 'dataProcessing' } },
 
     { data: { id: 'scikitLearn-python', source: 'scikitLearn', target: 'python' } },
     { data: { id: 'scikitLearn-algorithms', source: 'scikitLearn', target: 'algorithms' } },
-    { data: { id: 'scikitLearn-dataProcessing', source: 'scikitLearn', target: 'dataProcessing' } },
 
     { data: { id: 'pytorch-python', source: 'pytorch', target: 'python' } },
     { data: { id: 'pytorch-algorithms', source: 'pytorch', target: 'algorithms' } },
-    { data: { id: 'pytorch-dataProcessing', source: 'pytorch', target: 'dataProcessing' } },
 
     { data: { id: 'cryptography-algorithms', source: 'cryptography', target: 'algorithms' } },
     { data: { id: 'cryptography-backend', source: 'cryptography', target: 'backendDevelopment' } },
