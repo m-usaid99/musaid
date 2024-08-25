@@ -1,10 +1,12 @@
 import React from 'react';
+import Box from './Box';
 
 function AudioJournal() {
   return (
-    <div>
+    <Box >
       <h1>Audio Journal</h1>
-    </div>
+      <p>Coming Soon!</p>
+    </Box>
   );
 }
 
