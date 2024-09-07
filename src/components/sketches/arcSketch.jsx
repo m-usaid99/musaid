@@ -28,10 +28,10 @@ class Arc {
 
 export const arcSetup = (p) => {
   p.arcs = [];
-  let num = 10;
+  let num = 12;
   let r_mult = 1.25;
-  let r0 = 150;
-  let f_mult = 0.2;
+  let r0 = 100;
+  let f_mult = 0.375;
 
   // Create a number of arcs
   for (let i = 0; i < num; i++) {

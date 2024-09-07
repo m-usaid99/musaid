@@ -7,11 +7,6 @@ import SkillsGraph from './SkillsGraph';
 import MobileSkillsAccordion from './SkillsGraphMobile';
 import styles from '../styles/About.module.css';
 
-
-// TODO: - (23/08/24)
-// - figure out how to make button also zoom in background
-
-
 function About() {
   const contentRef = useRef(null);
   const skillsSectionRef = useRef(null);
