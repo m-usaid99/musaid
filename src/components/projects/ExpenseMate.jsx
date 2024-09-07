@@ -4,6 +4,7 @@ import Box from "../Box";
 import Sketch from "../Sketch";
 import styles from "../../styles/ExpenseMate.module.css";
 import { arcDraw, arcSetup } from "../sketches/arcSketch";
+import { stagger } from "framer-motion";
 
 
 function ExpenseMate() {
@@ -76,6 +77,127 @@ function ExpenseMate() {
               <p><strong>Axios:</strong> Axios was chosen for making HTTP requests between the frontend and backend. It simplifies API interactions, handling data submission and fetching while also attaching JWTs for secure user authentication in each request.</p>
               <p><strong>Swagger:</strong> Swagger was employed to auto-generate API documentation, making it easy to visualize, test, and interact with backend API routes during development, improving the overall efficiency of backend testing and debugging.</p>
               <p><strong>Vercel & Render:</strong> Vercel was used to deploy the frontend due to its fast and seamless integration with React, while Render hosts the backend, managing the Node.js server and ensuring API requests are handled reliably.</p>
+            </div>
+          </div>
+          <div className={styles.devProcessSection}>
+            <h2 className={styles.devProcessTitle}>Development Process</h2>
+            <h2 className={styles.devProcessSubHeading}>FrontEnd & API Integration</h2>
+            <div className={styles.devProcessItem}>
+              <h3>Initial Setup and Architecture</h3>
+              <p>
+                The React frontend was structured into reusable components, such as <strong>Dashboard</strong>, <strong>ExpensesPage</strong>, and <strong>IncomePage</strong>, allowing for modular development. Each page
+                consists of smaller components like <strong>SummaryCardsSection</strong>, <strong>ExpenseList</strong>, and <strong>ChartsSection</strong>,
+                facilitating a clean and maintainable architecture.
+              </p>
+              <p>
+                The project uses <strong>Redux</strong> for global state management,
+                centralizing the state for expenses, income, user authentication, and
+                notifications. This makes it easy to handle complex state interactions
+                across the app, with each slice (e.g., <strong>incomeSlice</strong>, <strong>expensesSlice</strong>) managing specific parts of the data.
+              </p>
+            </div>
+
+            <div className={styles.devProcessItem}>
+              <h3>State Management with Redux</h3>
+              <p>
+                Redux slices (<strong>incomeSlice</strong>, <strong>expensesSlice</strong>, <strong>userSlice</strong>) were developed to manage the core state of
+                the app, such as user login, fetching income/expense data, and handling
+                CRUD operations. <strong>Redux Thunks</strong> were utilized to handle
+                asynchronous actions, ensuring seamless API interactions.
+              </p>
+              <p>
+                The <strong>store.js</strong> file consolidates all reducers, combining
+                slices like expenses, income, user, and notification, making the state
+                management modular and scalable.
+              </p>
+            </div>
+
+            <div className={styles.devProcessItem}>
+              <h3>Authentication and Protected Routes</h3>
+              <p>
+                The app implements <strong>JWT-based authentication</strong>, managing
+                user sessions using the <strong>userSlice</strong> in Redux. After login,
+                JWT tokens are stored securely, and protected routes (like <strong>Dashboard</strong>,
+                <strong>ExpensesPage</strong>, and <strong>IncomePage</strong>) are only
+                accessible to authenticated users.
+              </p>
+              <p>
+                The <strong>ProtectedRoute</strong> component ensures that users cannot
+                access sensitive pages without being logged in. It redirects unauthenticated
+                users to the login page.
+              </p>
+            </div>
+
+            <div className={styles.devProcessItem}>
+              <h3>API Design and CRUD Operations</h3>
+              <p>
+                The backend API was designed to handle CRUD operations for expenses and income. <strong>Async Thunks</strong> (e.g., <strong>fetchIncomesAsync</strong>, <strong>addIncomeAsync</strong>, <strong>updateIncomeAsync</strong>, <strong>deleteIncomeAsync</strong>) were used to fetch and manipulate
+                financial data from the backend. The state is updated dynamically as users
+                add, edit, or delete entries, with notifications providing feedback.
+              </p>
+              <p>
+                For both expenses and income, additional functionality was developed to track
+                trends over time using selectors like <strong>selectExpenseTrendsData</strong> and <strong>selectIncomeTrendsData</strong>, which format data for visual representation.
+              </p>
+            </div>
+
+            <div className={styles.devProcessItem}>
+              <h3>UI/UX and Theming</h3>
+              <p>
+                The app's UI is designed using <strong>Material-UI</strong> for a consistent
+                and responsive experience across devices. Components like <strong>TextField</strong>, <strong>Button</strong>, and <strong>Container</strong> are utilized throughout
+                the app for input forms and layout structures.
+              </p>
+              <p>
+                Theming was implemented using a custom <strong>ThemeContext</strong>, allowing
+                users to toggle between light and dark modes. This was integrated with <strong>Material-UI’s ThemeProvider</strong>, and user preferences are
+                persisted using Redux in the <strong>userSlice</strong> and stored in localStorage.
+              </p>
+            </div>
+
+            <div className={styles.devProcessItem}>
+              <h3>Notification System</h3>
+              <p>
+                A global notification system was developed using <strong>Redux</strong> and <strong>Snackbar</strong> from Material-UI. This system provides real-time
+                feedback to users for actions like adding expenses, updating profiles, or
+                handling errors. Notifications are triggered by dispatching actions like <strong>showNotification</strong>, ensuring the user is informed about
+                the success or failure of operations.
+              </p>
+            </div>
+
+            <div className={styles.devProcessItem}>
+              <h3>Routing and Navigation</h3>
+              <p>
+                <strong>React Router</strong> is used for client-side routing, ensuring
+                smooth transitions between pages like <strong>LoginPage</strong>, <strong>Dashboard</strong>, <strong>ExpensesPage</strong>, and <strong>IncomePage</strong>. Routes are nested, with protected routes
+                requiring authentication.
+              </p>
+              <p>
+                A <strong>Router</strong> component wraps the app’s navigation, and
+                routes are protected by the <strong>ProtectedRoute</strong> component,
+                redirecting unauthenticated users to the login page.
+              </p>
+            </div>
+
+            <div className={styles.devProcessItem}>
+              <h3>Error Handling and Data Validation</h3>
+              <p>
+                Error handling was built into <strong>Redux Thunks</strong>, where errors
+                from the backend API are caught and dispatched as rejected actions. These
+                errors are reflected in the UI with appropriate feedback via
+                <strong>Material-UI’s Snackbar</strong>, informing users if an action
+                (like saving data) failed.
+              </p>
+            </div>
+
+            <div className={styles.devProcessItem}>
+              <h3>Deployment</h3>
+              <p>
+                The frontend was deployed on <strong>Vercel</strong>, and the backend was
+                deployed on <strong>Render</strong>. Both services ensure smooth and fast
+                delivery of the app to end-users. The deployment pipelines allow for
+                continuous updates as features are added.
+              </p>
             </div>
           </div>
         </div>

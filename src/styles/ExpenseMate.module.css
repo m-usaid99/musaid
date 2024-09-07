@@ -22,6 +22,7 @@
   font-weight: 600;
   z-index: 1000;
   letter-spacing: 5px;
+  background-color: black;
 }
 
 .homeLink:hover {
@@ -125,7 +126,7 @@
 }
 
 .featuresTitle {
-  font-size: 2.5vh;
+  font-size: 3vh;
   font-family: var(--font-secondary);
   margin-bottom: 20px;
 }
@@ -150,7 +151,7 @@
 }
 
 .techStackSection h2 {
-  font-size: 2.5vh;
+  font-size: 3vh;
   font-family: var(--font-secondary);
   font-weight: 700;
 }
@@ -177,4 +178,19 @@
   font-size: 16px;
   line-height: 1.6;
   margin-bottom: 15px;
+}
+
+.devProcessSection {
+  display: flex;
+  flex-direction: column;
+}
+
+.devProcessTitle {
+  text-align: center;
+  font-size: 3vh;
+  font-family: var(--font-secondary);
+}
+
+.devProcessItem {
+  width: 40%;
 }
