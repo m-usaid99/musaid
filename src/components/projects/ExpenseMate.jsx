@@ -4,6 +4,7 @@ import Box from "../Box";
 import Sketch from "../Sketch";
 import styles from "../../styles/ExpenseMate.module.css";
 import { arcDraw, arcSetup } from "../sketches/arcSketch";
+import ScreenshotGallery from "./ScreenshotGallery";
 
 function ExpenseMate() {
 
@@ -300,9 +301,9 @@ function ExpenseMate() {
                     Additionally, tests cover invalid user inputs, such as negative values for amounts, and ensure that the validation logic, such as with <strong>Joi</strong>, correctly rejects bad data.
                   </p>
                 </div>
-
               </div>
             </div>
+            <ScreenshotGallery />
           </div>
         </div>
       </div>
