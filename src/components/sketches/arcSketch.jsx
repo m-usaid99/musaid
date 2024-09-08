@@ -42,7 +42,7 @@ export const arcSetup = (p) => {
 };
 
 export const arcDraw = (p) => {
-  p.background(10);
+  p.background(0);
   p.translate(p.width / 2, p.height / 2);
 
   // Update and display each arc

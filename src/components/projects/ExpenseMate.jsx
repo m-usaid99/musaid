@@ -26,12 +26,16 @@ function ExpenseMate() {
           </p>
         </div>
         <div className={styles.buttons}>
-          <button className={styles.viewProjectButton}>
-            View GitHub Repository
-          </button>
-          <button className={styles.viewProjectButton}>
-            View Live Demo
-          </button>
+          <a href="https://github.com/m-usaid99/ExpenseMate" target="_blank" rel="noopener noreferrer">
+            <button className={styles.viewProjectButton}>
+              View GitHub Repository
+            </button>
+          </a>
+          <a href="https://expensemate.vercel.app" target="_blank" rel="noopener noreferrer">
+            <button className={styles.viewProjectButton}>
+              View Live Demo
+            </button>
+          </a>
         </div>
         <div className={styles.scrollIndicator}>
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
