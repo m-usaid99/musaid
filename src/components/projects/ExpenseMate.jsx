@@ -328,7 +328,7 @@ function ExpenseMate() {
                 ) : null}
               </div>
             </div>
-            {/* <ScreenshotGallery /> */}
+            <ScreenshotGallery />
           </div>
         </div>
       </div>
